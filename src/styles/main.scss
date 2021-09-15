@@ -14,33 +14,29 @@ body {
   display: flex;
   flex-direction: column;
   margin: 0 auto;
-  margin-top: 100px;
   align-content: center;
 
-  #button-container {
-    margin: 0 auto;
-    text-align: center;
+  #form-container {
+    width: 60%;
+    margin: auto;
+    justify-content: center;
+    color: white;
   }
 
-#form-container {
-  width: 60%;
-  margin: auto;
-  justify-content: center;
-  color: white;
-}
+    #shop {
+      width: 90%;
+      display: flex;
+      flex-flow: row wrap;
+      text-align: center;
+      margin: auto;
+      justify-content: center;
 
-#shop {
-  width: 90%;
-  display: flex;
-  flex-flow: row wrap;
-  text-align: center;
-  margin: auto;
-  justify-content: center;
-
-  .card {
-    width: 300px;
-    margin: 5px;
-  }
+      .card {
+        width: 300px;
+        margin: 5px;
+        background-color: transparent;
+        border-color: white;
+      }
 }
 
 }
