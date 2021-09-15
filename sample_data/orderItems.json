@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
     "-MjX7e1Y-jXcJzlgEKHO" : {
       "orderId" : "-MjX7e1Y-jXcJzlgEKHO",
       "menuItem": "Extra Pepporni Pizza",
@@ -46,3 +47,51 @@
       "itemPrice": "$27.40"
     }
   }
+=======
+  "-MjX7e1Y-jXcJzlgEKHO" : {
+    "itemPrice" : "$22.95",
+    "menuItem" : "Extra Pepporni Pizza",
+    "orderId" : "-MjX7e1Y-jXcJzlgEKHO"
+  },
+  "-MjX7plHF4zfL0Viz6-E" : {
+    "itemPrice" : "$41.11",
+    "menuItem" : "Medium Wings",
+    "orderId" : "-MjX7plHF4zfL0Viz6-E"
+  },
+  "-MjX7yZmfaDN0qQyJe-4" : {
+    "itemPrice" : "$22.76",
+    "menuItem" : "Buffalo Chicken Pizza",
+    "orderId" : "-MjX7yZmfaDN0qQyJe-4"
+  },
+  "-MjX838zRCKaW0EvEtID" : {
+    "itemPrice" : "$30.06",
+    "menuItem" : "911 Hot Wings",
+    "orderId" : "-MjX838zRCKaW0EvEtID"
+  },
+  "-MjX8A7b7X2H-T10WAiI" : {
+    "itemPrice" : "$31.02",
+    "menuItem" : "BBQ Wings ",
+    "orderId" : "-MjX8A7b7X2H-T10WAiI"
+  },
+  "-MjX8E5AgtJFWLjN3qjR" : {
+    "itemPrice" : "$32.17",
+    "menuItem" : "Pizza",
+    "orderId" : "-MjX8E5AgtJFWLjN3qjR"
+  },
+  "-MjX8Hn--yv95IbA15gN" : {
+    "itemPrice" : "$39.08",
+    "menuItem" : "Buffalo Wings",
+    "orderId" : "-MjX8Hn--yv95IbA15gN"
+  },
+  "-MjX8LHGVFJXJhYT1YlX" : {
+    "itemPrice" : "$54.55",
+    "menuItem" : "Deep Dish Pizza",
+    "orderId" : "-MjX8LHGVFJXJhYT1YlX"
+  },
+  "-MjX8Sd7EKeeQ1sWFHEe" : {
+    "itemPrice" : "$27.40",
+    "menuItem" : "Hot Wings",
+    "orderId" : "-MjX8Sd7EKeeQ1sWFHEe"
+  }
+}
+>>>>>>> Development

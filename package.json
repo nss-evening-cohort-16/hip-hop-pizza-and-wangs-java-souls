@@ -29,10 +29,11 @@
     "webpack-dev-server": "^4.1.0"
   },
   "dependencies": {
+    "5": "0.0.1",
     "@fortawesome/fontawesome-free": "5.14.0",
     "@popperjs/core": "^2.9.3",
     "axios": "^0.21.1",
-    "bootstrap": "^5.1.0",
+    "bootstrap": "^5.1.1",
     "dotenv": "^10.0.0",
     "firebase": "^8.2.0"
   }
