@@ -18,7 +18,12 @@ const navBar = () => {
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav mr-auto">
-          <li class="nav-item active">
+        <li class="nav-item active">
+            <a class="nav-link" href="#" id="home">
+              Home <span class="sr-only"></span>
+            </a>
+          </li>  
+        <li class="nav-item active">
             <a class="nav-link" href="#" id="viewOrders">
               View Orders <span class="sr-only"></span>
             </a>
@@ -26,6 +31,9 @@ const navBar = () => {
           <li class="nav-item">
             <a class="nav-link" href="#" id="createOrder">Create an Order</a>
           </li>
+          <li class="nav-item">
+          <a class="nav-link" href="#" id="revenue">View Revenue</a>
+        </li>
           <input
           class="form-control mr-sm-2"
           id="search"
