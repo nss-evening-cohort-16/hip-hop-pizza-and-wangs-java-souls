@@ -8,3 +8,24 @@ body {
   text-align: center;
   margin-top: 100px;
 }
+
+#button-container{
+  align-items: center;
+  align-content: center;
+}
+
+.button-card {
+  background-color: transparent;
+  .btn-card-body{
+    display: flex;
+    flex-direction: column;
+  }
+  .hs-btn {
+    max-width: 20rem;
+    max-height: 10rem;
+    margin: 1rem;
+  }
+
+}
+
+
