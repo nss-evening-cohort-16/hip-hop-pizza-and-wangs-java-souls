@@ -2,8 +2,8 @@ import firebase from 'firebase/app';
 import 'firebase/auth';
 
 const signMeOut = () => {
-  firebase.auth().signOut();
   document.querySelector('#navigation').innerHTML = '';
+  firebase.auth().signOut();
 };
 
 const logoutButton = () => {
