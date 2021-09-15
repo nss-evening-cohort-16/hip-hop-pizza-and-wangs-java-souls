@@ -35,6 +35,6 @@
     "axios": "^0.21.1",
     "bootstrap": "^5.1.1",
     "dotenv": "^10.0.0",
-    "firebase": "^8.2.0"
+    "firebase": "^8.10.0"
   }
 }

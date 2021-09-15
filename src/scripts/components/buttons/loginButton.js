@@ -1,4 +1,4 @@
-import signIn from '../helpers/signIn';
+import signIn from '../../helpers/auth/signIn';
 
 // GOOGLE LOGIN BUTTON
 const loginButton = () => {
