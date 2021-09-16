@@ -7,4 +7,36 @@ body {
   color: brown;
   text-align: center;
   margin-top: 100px;
+  
+}
+
+#main-container {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  align-content: center;
+
+  #form-container {
+    width: 60%;
+    margin: auto;
+    justify-content: center;
+    color: white;
+  }
+
+    #shop {
+      width: 90%;
+      display: flex;
+      flex-flow: row wrap;
+      text-align: center;
+      margin: auto;
+      justify-content: center;
+
+      .card {
+        width: 300px;
+        margin: 5px;
+        background-color: transparent;
+        border-color: white;
+      }
+}
+
 }

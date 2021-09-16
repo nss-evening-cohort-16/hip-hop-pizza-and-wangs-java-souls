@@ -41,8 +41,8 @@ const navBar = () => {
           aria-label="Search"
         />
         </li>
-          <li class="logout" id="logout-button">
-          </li>
+          <div class="logout" id="logout-button">
+          </div>
           <li>
         </ul>
       </div>
