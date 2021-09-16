@@ -7,9 +7,7 @@ body {
   color: brown;
   text-align: center;
   margin-top: 100px;
-  
 }
-
 #main-container {
   display: flex;
   flex-direction: column;
@@ -37,6 +35,26 @@ body {
         background-color: transparent;
         border-color: white;
       }
+
+        .list-group-item {
+          background-color: transparent;
+          color: white;
+        }
+}
 }
 
+.button-card {
+  background-color: transparent;
+  margin: 0 auto;
+  float: none;
+
+  .btn-card-body{
+    display: flex;
+    flex-direction: column;
+  }
+  .hs-btn {
+    max-width: 20rem;
+    max-height: 10rem;
+    margin: 1rem;
+  }
 }

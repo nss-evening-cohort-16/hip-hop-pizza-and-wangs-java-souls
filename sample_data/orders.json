@@ -41,7 +41,11 @@
     "customerPhoneNumber" : "241-414-5229",
     "orderId" : "-MjX838zRCKaW0EvEtID",
     "orderStatus" : false,
+<<<<<<< HEAD
+    "orderTotal" : "$37.58",
+=======
     "orderTotal" : "$15.94",
+>>>>>>> Development
     "orderType" : "in Person",
     "paymentMethod" : "5048370841441975",
     "timeStamp" : "2021-06-28 16:27:02",
@@ -53,7 +57,11 @@
     "customerPhoneNumber" : "691-868-5848",
     "orderId" : "-MjX8A7b7X2H-T10WAiI",
     "orderStatus" : false,
+<<<<<<< HEAD
+    "orderTotal" : "$38.93",
+=======
     "orderTotal" : "$21.13",
+>>>>>>> Development
     "orderType" : "phone",
     "paymentMethod" : "5048379838759687",
     "timeStamp" : "2020-12-10 06:36:42",
@@ -65,11 +73,19 @@
     "customerPhoneNumber" : "184-911-6678",
     "orderId" : "-MjX8E5AgtJFWLjN3qjR",
     "orderStatus" : false,
+<<<<<<< HEAD
+    "orderTotal" : "$37.70",
+    "orderType" : "in Person",
+    "paymentMethod" : "5048378969869042",
+    "timeStamp" : "2020-11-10 08:54:59",
+    "tipTotal" : "$5.53"
+=======
     "orderTotal" : "$19.88",
     "orderType" : "in Person",
     "paymentMethod" : "5048378969869042",
     "timeStamp" : "2020-11-10 08:54:59",
     "tipTotal" : "$37.70"
+>>>>>>> Development
   },
   "-MjX8Hn--yv95IbA15gN" : {
     "customerEmail" : "mclaye6@timesonline.co.uk",
@@ -81,7 +97,11 @@
     "orderType" : "in Person",
     "paymentMethod" : "5108755629029298",
     "timeStamp" : "2021-07-19 02:07:45",
+<<<<<<< HEAD
+    "tipTotal" : "$33.84"
+=======
     "tipTotal" : "$20.80"
+>>>>>>> Development
   },
   "-MjX8LHGVFJXJhYT1YlX" : {
     "customerEmail" : "aluckes7@dailymotion.com",
@@ -93,7 +113,11 @@
     "orderType" : "in Person",
     "paymentMethod" : "5048373074108931",
     "timeStamp" : "2021-08-02 01:12:22",
+<<<<<<< HEAD
+    "tipTotal" : "$44.91"
+=======
     "tipTotal" : "$85.77"
+>>>>>>> Development
   },
   "-MjX8Sd7EKeeQ1sWFHEe" : {
     "customerEmail" : "rshulver8@prnewswire.com",
@@ -105,6 +129,10 @@
     "orderType" : "in Person",
     "paymentMethod" : "5048375028819539",
     "timeStamp" : "2021-02-14 10:02:58",
+<<<<<<< HEAD
+    "tipTotal" : "$13.09"
+=======
     "tipTotal" : "$4.79"
+>>>>>>> Development
   }
 }
