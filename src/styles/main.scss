@@ -9,13 +9,11 @@ body {
   margin-top: 100px;
 }
 
-#button-container{
-  align-items: center;
-  align-content: center;
-}
-
 .button-card {
   background-color: transparent;
+  margin: 0 auto;
+  float: none;
+
   .btn-card-body{
     display: flex;
     flex-direction: column;
@@ -27,5 +25,3 @@ body {
   }
 
 }
-
-

@@ -1,10 +1,7 @@
-// import getOrders()
+import showOrders from '../components/orders';
+import getOrders from '../helpers/data/odersData';
 // import createOrders()
 // import getRevenue()
-
-const getOrders = () => {
-  console.warn('Getting Orders');
-};
 
 const createOrders = () => {
   console.warn('Creating Orders');
@@ -17,7 +14,7 @@ const getRevenue = () => {
 const domEvents = () => {
   document.querySelector('#main-container').addEventListener('click', (e) => {
     if (e.target.id.includes('view-orders-button')) {
-      getOrders();
+      getOrders().then((orderCards) => showOrders(orderCards));
     }
     if (e.target.id.includes('create-order-button')) {
       createOrders();
