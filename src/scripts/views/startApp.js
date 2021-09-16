@@ -1,12 +1,10 @@
 import domBuilder from '../components/domBuilder';
 import navBar from '../components/navBar';
-import showOrders from '../components/orders';
-import getOrders from '../helpers/data/odersData';
+import navigationEvents from '../Events/navigationEvents';
 
 const startApp = () => {
   domBuilder();
   navBar();
-  getOrders().then((orderCards) => showOrders(orderCards));
+  navigationEvents();
 };
-
 export default startApp;

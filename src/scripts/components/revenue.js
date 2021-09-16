@@ -1,5 +1,8 @@
+import clearDom from '../helpers/auth/clearDom';
+
 const viewRevenuePage = () => {
-  document.querySelector('#navigation').innerHTML = `
+  clearDom();
+  document.querySelector('#view').innerHTML = `
     <div>
       <h1>REVENUE</h1>
     </div>
