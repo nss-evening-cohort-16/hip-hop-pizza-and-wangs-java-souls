@@ -9,5 +9,4 @@ const startApp = () => {
   showHSbuttons();
   domEvents();
 };
-
 export default startApp;
