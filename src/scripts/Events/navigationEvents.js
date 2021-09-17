@@ -1,4 +1,4 @@
-import getOrders from '../helpers/data/odersData';
+import { getOrders } from '../helpers/data/odersData';
 import showOrders from '../components/orders';
 import viewRevenuePage from '../components/revenue';
 import showHSbuttons from '../helpers/data/homeScreenButtonsCard';
