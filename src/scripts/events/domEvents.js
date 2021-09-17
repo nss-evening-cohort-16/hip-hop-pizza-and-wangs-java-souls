@@ -1,5 +1,5 @@
 import showOrders from '../components/orders';
-import getOrders from '../helpers/data/odersData';
+import { getOrders } from '../helpers/data/ordersData';
 // import createOrders()
 // import getRevenue()
 

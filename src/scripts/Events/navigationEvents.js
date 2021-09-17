@@ -1,8 +1,8 @@
-import getOrders from '../helpers/data/odersData';
 import showOrders from '../components/orders';
 import viewRevenuePage from '../components/revenue';
 import showHSbuttons from '../helpers/data/homeScreenButtonsCard';
 import addOrderForm from '../components/forms/orderForm';
+import { getOrders } from '../helpers/data/ordersData';
 
 const navigationEvents = () => {
   // HOME
