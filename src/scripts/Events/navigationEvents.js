@@ -1,7 +1,8 @@
-import { getOrders } from '../helpers/data/odersData';
 import showOrders from '../components/orders';
 import viewRevenuePage from '../components/revenue';
 import showHSbuttons from '../helpers/data/homeScreenButtonsCard';
+import addOrderForm from '../components/forms/orderForm';
+import { getOrders } from '../helpers/data/ordersData';
 
 const navigationEvents = () => {
   // HOME
@@ -15,7 +16,10 @@ const navigationEvents = () => {
       getOrders().then((orderCards) => showOrders(orderCards));
     });
   // CREATE ORDER
-
+  document.querySelector('#createOrder')
+    .addEventListener('click', () => {
+      addOrderForm();
+    });
   // View Revenue
   document.querySelector('#revenue')
     .addEventListener('click', () => {
