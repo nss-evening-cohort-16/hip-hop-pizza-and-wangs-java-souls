@@ -1,14 +1,14 @@
 import domBuilder from '../components/domBuilder';
 import navBar from '../components/navBar';
-import domEvents from '../Events/domEvents';
-import navigationEvents from '../Events/navigationEvents';
+import domEvents from '../events/domEvents';
+import navigationEvents from '../events/navigationEvents';
 import showHSbuttons from '../helpers/data/homeScreenButtonsCard';
 
-const startApp = () => {
+const startApp = (user) => {
   domBuilder();
   navBar();
-  showHSbuttons();
+  showHSbuttons(user);
   domEvents();
-  navigationEvents();
+  navigationEvents(user);
 };
 export default startApp;
