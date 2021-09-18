@@ -1,5 +1,5 @@
 import showOrders from '../components/orders';
-import { getOrders, createOrder } from '../helpers/data/ordersData';
+import { getOrders, createOrder, deleteOrder } from '../helpers/data/ordersData';
 import orderItemForm from '../components/forms/OrderItemForm';
 import { createOrderitem, getOrderDetails } from '../helpers/data/orderItemsData';
 import showOrderDetails from '../components/showOrderDetails';
@@ -58,6 +58,14 @@ const domEvents = () => {
 
     if (e.target.id.includes('view-revenue-button')) {
       getRevenue();
+    }
+    // Delete Orders
+    if (e.target.id.includes('delete-order')) {
+      // eslint-disable-next-line no-alert
+      if (window.confirm('Want to delete?')) {
+        const [, id] = e.target.id.split('--');
+        deleteOrder(id).then(showOrders);
+      }
     }
   });
 };
