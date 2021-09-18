@@ -10,7 +10,7 @@ const checkLoginStatus = () => {
   firebase.initializeApp(firebaseConfig);
   firebase.auth().onAuthStateChanged((user) => {
     if (user) {
-      startApp();
+      startApp(user);
       logoutButton();
     } else {
       homeLoggedOut();
