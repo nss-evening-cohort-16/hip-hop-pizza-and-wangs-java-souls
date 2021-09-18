@@ -4,7 +4,10 @@ import selectOrderItem from './selectOrderItem';
 const orderItemForm = (obj = {}) => {
   clearDom();
   document.querySelector('#form-container').innerHTML = `
-  <form id="submit-orderItem-form" class="mb-4">        
+  <form id="submit-orderItem-form" class="mb-4"> 
+  <div class="form-group">
+  <label for="orderNum">Order Number</label> value=${obj.firebaseKey || ''}>
+  </div>       
   <div class="form-group" id="select-Menu">
   </div>        
       <button type="submit" 

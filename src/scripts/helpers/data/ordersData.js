@@ -1,5 +1,6 @@
 import axios from 'axios';
 import firebaseConfig from '../../../api/apiKeys';
+import { orderItemForm } from '../../components/forms/OrderItemForm';
 
 const dbUrl = firebaseConfig.databaseURL;
 // get orders
@@ -17,7 +18,8 @@ const createOrder = (orderObject) => new Promise((resolve, reject) => {
       const body = { firebaseKey: response.data.name };
       axios.patch(`${dbUrl}/orders/${response.data.name}.json`, body)
         .then(() => {
-          getOrders().then((orderCards) => resolve(orderCards));
+          orderItemForm(orderObject);
+          // getOrders().then((orderCards) => resolve(orderCards));
         });
     }).catch((error) => reject(error));
 });

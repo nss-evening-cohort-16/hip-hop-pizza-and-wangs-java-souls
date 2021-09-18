@@ -37,7 +37,8 @@ const domEvents = () => {
         timeStamp: new Date(),
         tipTotal: 0
       };
-      createOrder(orderObject).then(orderItemForm(orderObject));
+      // createOrder(orderObject).then(orderItemForm(orderObject));
+      createOrder(orderObject);
     }
 
     if (e.target.id.includes('submit-MenuItem')) {
