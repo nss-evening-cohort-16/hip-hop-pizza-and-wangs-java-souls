@@ -16,9 +16,9 @@ const showOrders = (array) => {
           <li class="list-group-item">${item.orderType}</li>
         </ul>
         <div class="card-body">
-          <button type="button" class="btn btn-outline-primary">Details</button>
-          <button type="button" class="btn btn-outline-info">Edit</button>
-          <button type="button" class="btn btn-outline-danger">Delete</button>
+          <button type="button" id="details-btn" class="btn btn-outline-primary">Details</button>
+          <button type="button" id="edit-btn" class="btn btn-outline-info">Edit</button>
+          <button type="button" id="delete-btn" class="btn btn-outline-danger">Delete</button>
         </div>
       </div>`;
   });
