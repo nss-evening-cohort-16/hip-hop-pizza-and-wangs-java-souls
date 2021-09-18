@@ -18,13 +18,12 @@ const addOrderForm = (obj = {}) => {
            </div>
            <div class="dropdown form-group form-group">
            <div class="dropdown">
-           <button class="btn btn-secondary dropdown-toggle" type="button" id="orderType" data-bs-toggle="dropdown" aria-expanded="false">
-             Select Order type
-           </button>
-           <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
-             <li><button  class="dropdown-item" type="button">Phone</button></li>
-             <li><button  class="dropdown-item" type="button">In-person</button></li>
-           </ul>
+           <select class="btn btn-secondary dropdown-toggle" type="button" id="orderType" >
+    <option selected value="Select Order type">Select Order type</option>
+    <option value="Phone">Phone</option>
+    <option value="In-person">In-person</option>
+    </select>
+         
          </div>
    
          <button type="submit" 

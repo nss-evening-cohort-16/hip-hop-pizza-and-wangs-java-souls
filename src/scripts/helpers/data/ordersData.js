@@ -11,10 +11,11 @@ const getOrders = () => new Promise((resolve, reject) => {
 
 // CREATE ORDER
 const createOrder = (orderObject) => new Promise((resolve, reject) => {
+  console.warn('create order');
   axios.post(`${dbUrl}/orders.json`, orderObject)
     .then((response) => {
       const body = { firebaseKey: response.data.name };
-      axios.patch(`${dbUrl}/authors/${response.data.name}.json`, body)
+      axios.patch(`${dbUrl}/orders/${response.data.name}.json`, body)
         .then(() => {
           getOrders().then((orderCards) => resolve(orderCards));
         });
