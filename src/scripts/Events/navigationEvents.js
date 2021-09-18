@@ -4,11 +4,11 @@ import showHSbuttons from '../helpers/data/homeScreenButtonsCard';
 import addOrderForm from '../components/forms/orderForm';
 import { getOrders } from '../helpers/data/ordersData';
 
-const navigationEvents = () => {
+const navigationEvents = (user) => {
   // HOME
   document.querySelector('#home')
     .addEventListener('click', () => {
-      showHSbuttons();
+      showHSbuttons(user);
     });
   // VIEW ORDERS
   document.querySelector('#viewOrders')
