@@ -26,7 +26,7 @@ const createOrderitem = (orderObject) => new Promise((resolve, reject) => {
       const body = { firebaseKey: response.data.name };
       axios.patch(`${dbUrl}/orderDetails/${response.data.name}.json`, body)
         .then(() => {
-          console.log('create order form');
+          console.warn('create order form');
           // getOrders().then((orderCards) => resolve(orderCards));
         });
     }).catch((error) => reject(error));
