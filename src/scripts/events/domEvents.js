@@ -3,25 +3,19 @@ import { getOrders, createOrder, deleteOrder } from '../helpers/data/ordersData'
 import orderItemForm from '../components/forms/orderItemForm';
 import { createOrderitem, getOrderDetails } from '../helpers/data/orderItemsData';
 import showOrderDetails from '../components/showOrderDetails';
-// import createOrders()
-// import getRevenue()
-
-const createOrders = () => {
-  console.warn('Creating Orders');
-};
-
-const getRevenue = () => {
-  console.warn('Getting Revenue');
-};
+import addOrderForm from '../components/forms/orderForm';
+import viewRevenuePage from '../components/revenue';
 
 const domEvents = () => {
   document.querySelector('#main-container').addEventListener('click', (e) => {
-    if (e.target.id.includes('view-orders-button')) {
+    if (e.target.id.includes('viewOrders')) {
       getOrders().then((orderCards) => showOrders(orderCards));
     }
-    if (e.target.id.includes('create-order-button')) {
-      console.warn('create-order-button');
-      createOrders();
+    if (e.target.id.includes('createOrder')) {
+      addOrderForm();
+    }
+    if (e.target.id.includes('revenue')) {
+      viewRevenuePage();
     }
     if (e.target.id.includes('submit-order')) {
       e.preventDefault();
@@ -54,10 +48,6 @@ const domEvents = () => {
       };
       createOrderitem(orderObject).then(orderItemForm(orderObject));
       getOrderDetails().then((orderCards) => showOrderDetails(orderCards));
-    }
-
-    if (e.target.id.includes('view-revenue-button')) {
-      getRevenue();
     }
     // Delete Orders
     if (e.target.id.includes('delete-order')) {
