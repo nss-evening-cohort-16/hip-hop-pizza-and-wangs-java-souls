@@ -4,11 +4,11 @@ import domEvents from '../events/domEvents';
 import navigationEvents from '../events/navigationEvents';
 import showHSbuttons from '../helpers/data/homeScreenButtonsCard';
 
-const startApp = () => {
+const startApp = (user) => {
   domBuilder();
   navBar();
-  showHSbuttons();
+  showHSbuttons(user);
   domEvents();
-  navigationEvents();
+  navigationEvents(user);
 };
 export default startApp;

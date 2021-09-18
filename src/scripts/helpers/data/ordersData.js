@@ -23,5 +23,24 @@ const createOrder = (orderObject) => new Promise((resolve, reject) => {
         });
     }).catch((error) => reject(error));
 });
+// GET SINGLE ORDER
+const getSingleOrder = (firebaseKey) => new Promise((resolve, reject) => {
+  axios.get(`${dbUrl}/orders/${firebaseKey}.json`)
+    .then((response) => resolve(response.data))
+    .catch(reject);
+});
+// DELETE
+const deleteOrder = (firebaseKey) => new Promise((resolve, reject) => {
+  axios.delete(`${dbUrl}/orders/${firebaseKey}.json`)
+    .then(() => {
+      getOrders().then(resolve);
+    })
+    .catch(reject);
+});
 
-export { getOrders, createOrder };
+export {
+  getOrders,
+  createOrder,
+  getSingleOrder,
+  deleteOrder
+};
