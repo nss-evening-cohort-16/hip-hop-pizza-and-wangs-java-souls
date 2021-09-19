@@ -1,8 +1,9 @@
 import showOrders from '../components/orders';
 import { getOrders, createOrder, deleteOrder } from '../helpers/data/ordersData';
-import orderItemForm from '../components/forms/OrderItemForm';
-import { createOrderitem, getOrderDetails } from '../helpers/data/orderItemsData';
-import showOrderDetails from '../components/showOrderDetails';
+import { createOrderitem } from '../helpers/data/orderItemsData';
+import paymentForm from '../components/forms/paymentForm';
+// import { createOrderitem, getOrderDetails } from '../helpers/data/orderItemsData';
+// import showOrderDetails from '../components/showOrderDetails';
 import addOrderForm from '../components/forms/orderForm';
 import viewRevenuePage from '../components/revenue';
 
@@ -31,25 +32,31 @@ const domEvents = () => {
         timeStamp: new Date(),
         tipTotal: 0
       };
-      // createOrder(orderObject).then(orderItemForm(orderObject));
+
       createOrder(orderObject);
     }
 
-    if (e.target.id.includes('submit-MenuItem')) {
+    if (e.target.id.includes('update-menuItem')) {
       e.preventDefault();
-      console.warn('submit-MenuItem');
-      console.warn(document.querySelector('#OrderItem_id').selectedOptions[0].text);
-      console.warn(document.querySelector('#OrderItem_id').selectedOptions[0].value);
-      const [menu, price] = document.querySelector('#OrderItem_id').selectedOptions[0].text.split('--');
+      console.warn(document.querySelector('#OrderItem_id').value);
+      const [order, menyItem] = document.querySelector('#OrderItem_id').value.split('--');
+      // console.warn(document.querySelector('#orderNum').firebasekey);
+      // const [menu, price] = document.querySelector('#OrderItem_id').selectedOptions[0].text.split('--');
       const orderObject = {
-        menuitem: menu,
-        itemprice: price,
-        orderId: document.querySelector('#OrderItem_id').selectedOptions[0].value,
-        menuItemID: document.querySelector('#OrderItem_id').selectedOptions[0].value
+        orderID: order,
+        menuItemID: menyItem
       };
-      createOrderitem(orderObject).then(orderItemForm(orderObject));
-      getOrderDetails().then((orderCards) => showOrderDetails(orderCards));
+      createOrderitem(orderObject);
+      // createOrderitem(orderObject).then(orderItemForm(orderObject));
+      // getOrderDetails().then((orderCards) => showOrderDetails(orderCards));
     }
+
+    if (e.target.id.includes('payment')) {
+      e.preventDefault();
+      paymentForm();
+      console.warn('payment');
+    }
+
     // Delete Orders
     if (e.target.id.includes('delete-order')) {
       // eslint-disable-next-line no-alert

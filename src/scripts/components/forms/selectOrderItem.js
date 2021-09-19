@@ -1,22 +1,21 @@
-import { getOrderItems } from '../../helpers/data/orderItemsData';
+import { getMenuItems } from '../../helpers/data/orderItemsData';
 
-const selectOrderItem = (OrderItemId) => {
+const selectOrderItem = (menuItemId) => {
+  console.warn('ordernumber');
+  console.warn(menuItemId);
   let domString = `<label for="OrderItem_id">Select a Menu Item</label>
     <select class="form-control" id="OrderItem_id" required>
     <option value="">Select a Menu Item</option>`;
 
-  getOrderItems().then((orderItemArray) => {
-    orderItemArray.forEach((orderItem) => {
+  getMenuItems().then((menuItemArray) => {
+    menuItemArray.forEach((menuItem) => {
       domString += `
           <option 
-            value="${orderItem.orderId}" 
-            ${OrderItemId === orderItem.firebaseKey ? 'selected' : ''}>
-              ${orderItem.menuItem} -- ${orderItem.itemPrice}
+            value="${menuItemId}--${menuItem.firebaseKey}" >
+              ${menuItem.menuItem} -- ${menuItem.itemPrice}
           </option>`;
     });
-
     domString += '</select>';
-
     document.querySelector('#select-Menu').innerHTML = domString;
   });
 };
