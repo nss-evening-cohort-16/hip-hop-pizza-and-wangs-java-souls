@@ -1,11 +1,13 @@
-// import geteMenuItems from './menuitems';
 import { getSingleOrdeMenuItems } from './orderItemsData';
+// import getMenuItemsArray from './menuitems';
 // API CALLS FOR BOOKS
 
-const viewOrderMenuItems = (firebaseKey) => new Promise((resolve, reject) => {
-  getSingleOrdeMenuItems(firebaseKey)
-    .then((response) => resolve(response.data))
-    .catch(reject);
+const viewOrderMenuItems = (orderFirebaseKey) => new Promise(() => {
+  getSingleOrdeMenuItems(orderFirebaseKey)
+    .then((menuitemarray) => {
+      // getMenuItemsArray(menuitemarray);
+      console.warn('menuitemarray');
+      console.warn(menuitemarray);
+    });
 });
-
 export default viewOrderMenuItems;
