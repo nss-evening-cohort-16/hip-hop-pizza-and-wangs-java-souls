@@ -20,7 +20,6 @@ const getOrderDetails = (firebaseKey) => new Promise((resolve, reject) => {
 });
 
 const createOrderitem = (orderObject) => new Promise((resolve, reject) => {
-  console.warn('create menu order');
   axios.post(`${dbUrl}/orderMenuItems.json`, orderObject)
     .then((response) => {
       const body = { firebaseKey: response.data.name };
