@@ -1,11 +1,17 @@
 import showOrders from '../components/orders';
-import { getOrders, createOrder, deleteOrder } from '../helpers/data/ordersData';
+import {
+  getOrders,
+  createOrder,
+  deleteOrder,
+} from '../helpers/data/ordersData';
 import { createOrderitem } from '../helpers/data/orderItemsData';
 import paymentForm from '../components/forms/paymentForm';
 // import { createOrderitem, getOrderDetails } from '../helpers/data/orderItemsData';
 // import showOrderDetails from '../components/showOrderDetails';
 import addOrderForm from '../components/forms/orderForm';
 import viewRevenuePage from '../components/revenue';
+import viewOrderItems from '../helpers/data/merdedData';
+import showOrderItems from '../components/showOrderItems';
 
 const domEvents = () => {
   document.querySelector('#main-container').addEventListener('click', (e) => {
@@ -64,6 +70,11 @@ const domEvents = () => {
         const [, id] = e.target.id.split('--');
         deleteOrder(id).then(showOrders);
       }
+    }
+    // VIEW ORDERS
+    if (e.target.id.includes('details-btn')) {
+      const [, firebaseKey] = e.target.id.split('--');
+      viewOrderItems(firebaseKey).then(showOrderItems);
     }
   });
 };
