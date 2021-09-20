@@ -3,10 +3,10 @@ import { getSingleOrder } from './ordersData';
 
 const viewOrderItems = (orderFirebaseKey) => new Promise((resolve, reject) => {
   getSingleOrder(orderFirebaseKey)
-    .then((orderObj) => {
-      getMenuItems(orderObj.menuItemID)
+    .then((menuObj) => {
+      getMenuItems(menuObj.firebaseKey)
         .then((menuItemObj) => {
-          resolve({ menuItemObj, ...orderObj });
+          resolve({ menuItemObj, ...menuObj });
         });
     }).catch(reject);
 });
