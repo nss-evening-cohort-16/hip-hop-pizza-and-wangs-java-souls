@@ -1,65 +1,56 @@
 {
   "-MjX7e1Y-jXcJzlgEKHO" : {
-    "itemPrice" : "$22.95",
-    "menuItem" : "Extra Pepporni Pizza",
+    "description" : "Sea Urchin",
     "firebaseKey" : "-MjX7e1Y-jXcJzlgEKHO",
-    "description": "Sea Urchin",
-    "imageURL": null
+    "itemPrice" : "$22.95",
+    "menuItem" : "Extra Pepporni Pizza"
   },
   "-MjX7plHF4zfL0Viz6-E" : {
-    "itemPrice" : "$41.11",
-    "menuItem" : "Medium Wings",
+    "description" : "Sea Urchin",
     "firebaseKey" : "-MjX7plHF4zfL0Viz6-E",
-    "description": "Sea Urchin",
-    "imageURL": null
+    "itemPrice" : "$41.11",
+    "menuItem" : "Medium Wings"
   },
   "-MjX7yZmfaDN0qQyJe-4" : {
-    "itemPrice" : "$22.76",
-    "menuItem" : "Buffalo Chicken Pizza",
+    "description" : "Sea Urchin",
     "firebaseKey" : "-MjX7yZmfaDN0qQyJe-4",
-    "description": "Sea Urchin",
-    "imageURL": null
+    "itemPrice" : "$22.76",
+    "menuItem" : "Buffalo Chicken Pizza"
   },
   "-MjX838zRCKaW0EvEtID" : {
-    "itemPrice" : "$30.06",
-    "menuItem" : "911 Hot Wings",
+    "description" : "Sea Urchin",
     "firebaseKey" : "-MjX838zRCKaW0EvEtID",
-    "description": "Sea Urchin",
-    "imageURL": null
+    "itemPrice" : "$30.06",
+    "menuItem" : "911 Hot Wings"
   },
   "-MjX8A7b7X2H-T10WAiI" : {
-    "itemPrice" : "$31.02",
-    "menuItem" : "BBQ Wings ",
+    "description" : "Sea Urchin",
     "firebaseKey" : "-MjX8A7b7X2H-T10WAiI",
-    "description": "Sea Urchin",
-    "imageURL": null
+    "itemPrice" : "$31.02",
+    "menuItem" : "BBQ Wings "
   },
   "-MjX8E5AgtJFWLjN3qjR" : {
-    "itemPrice" : "$32.17",
-    "menuItem" : "Pizza",
+    "description" : "Sea Urchin",
     "firebaseKey" : "-MjX8E5AgtJFWLjN3qjR",
-    "description": "Sea Urchin",
-    "imageURL": null
+    "itemPrice" : "$32.17",
+    "menuItem" : "Pizza"
   },
   "-MjX8Hn--yv95IbA15gN" : {
-    "itemPrice" : "$39.08",
-    "menuItem" : "Buffalo Wings",
+    "description" : "Sea Urchin",
     "firebaseKey" : "-MjX8Hn--yv95IbA15gN",
-    "description": "Sea Urchin",
-    "imageURL": null
+    "itemPrice" : "$39.08",
+    "menuItem" : "Buffalo Wings"
   },
   "-MjX8LHGVFJXJhYT1YlX" : {
-    "itemPrice" : "$54.55",
-    "menuItem" : "Deep Dish Pizza",
+    "description" : "Sea Urchin",
     "firebaseKey" : "-MjX8LHGVFJXJhYT1YlX",
-    "description": "Sea Urchin",
-    "imageURL": null
+    "itemPrice" : "$54.55",
+    "menuItem" : "Deep Dish Pizza"
   },
   "-MjX8Sd7EKeeQ1sWFHEe" : {
-    "itemPrice" : "$27.40",
-    "menuItem" : "Hot Wings",
+    "description" : "Sea Urchin",
     "firebaseKey" : "-MjX8Sd7EKeeQ1sWFHEe",
-    "description": "Sea Urchin",
-    "imageURL": null
+    "itemPrice" : "$27.40",
+    "menuItem" : "Hot Wings"
   }
 }
