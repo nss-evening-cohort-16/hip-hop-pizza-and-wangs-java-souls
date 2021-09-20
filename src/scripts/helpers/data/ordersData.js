@@ -1,5 +1,6 @@
 import axios from 'axios';
 import firebaseConfig from '../../../api/apiKeys';
+import orderItemForm from '../../components/forms/OrderItemForm';
 
 const dbUrl = firebaseConfig.databaseURL;
 // get orders
@@ -9,25 +10,27 @@ const getOrders = () => new Promise((resolve, reject) => {
     .catch((error) => reject(error));
 });
 
-// CREATE ORDER
-const createOrder = (orderObject) => new Promise((resolve, reject) => {
-  console.warn('create order');
-  axios.post(`${dbUrl}/orders.json`, orderObject)
-    .then((response) => {
-      const body = { firebaseKey: response.data.name };
-      axios.patch(`${dbUrl}/orders/${response.data.name}.json`, body)
-        .then(() => {
-          getOrders().then((orderCards) => resolve(orderCards));
-        });
-    }).catch((error) => reject(error));
-});
-
 // GET SINGLE ORDER
 const getSingleOrder = (firebaseKey) => new Promise((resolve, reject) => {
   axios.get(`${dbUrl}/orders/${firebaseKey}.json`)
     .then((response) => resolve(response.data))
     .catch(reject);
 });
+
+// CREATE ORDER
+const createOrder = (orderObject) => new Promise((resolve, reject) => {
+  axios.post(`${dbUrl}/orders.json`, orderObject)
+    .then((response) => {
+      const body = { firebaseKey: response.data.name };
+      axios.patch(`${dbUrl}/orders/${response.data.name}.json`, body)
+        .then(() => {
+          getSingleOrder(response.data.name).then(orderItemForm);
+          // result of getSingleOrder is paased to orderItemForm
+          // getOrders().then((orderCards) => resolve(orderCards));
+        });
+    }).catch((error) => reject(error));
+});
+
 // DELETE
 const deleteOrder = (firebaseKey) => new Promise((resolve, reject) => {
   axios.delete(`${dbUrl}/orders/${firebaseKey}.json`)
