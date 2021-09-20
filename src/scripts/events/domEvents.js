@@ -5,6 +5,7 @@ import {
   deleteOrder,
   updateOrder
 } from '../helpers/data/ordersData';
+// import viewOrderMenuItems from '../helpers/data/mergedata';
 import { createOrderitem } from '../helpers/data/orderItemsData';
 import paymentForm from '../components/forms/paymentForm';
 // import { createOrderitem, getOrderDetails } from '../helpers/data/orderItemsData';
@@ -67,6 +68,7 @@ const domEvents = () => {
         tipTotal: document.querySelector('#tipvalue').value,
         paymentMethod
       };
+      // viewOrderMenuItems(ordernumber);
       // ordernumber: document.querySelector('#orderID').value,
       // tipTotal: document.querySelector('#tipvalue').value,
       // paymentMethod: document.querySelector('#transmethod').value

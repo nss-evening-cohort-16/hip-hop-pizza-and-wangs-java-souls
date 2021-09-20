@@ -31,4 +31,15 @@ const createOrderitem = (orderObject) => new Promise((resolve, reject) => {
     }).catch((error) => reject(error));
 });
 
-export { getMenuItems, createOrderitem, getOrderDetails };
+const getSingleOrdeMenuItems = (firebaseKey) => new Promise((resolve, reject) => {
+  axios.get(`${dbUrl}/orderMenuItems.json?orderBy="orderID"&equalTo="${firebaseKey}"`)
+    .then((response) => resolve(Object.values(response.data)))
+    .catch((error) => reject(error));
+});
+
+export {
+  getMenuItems,
+  createOrderitem,
+  getOrderDetails,
+  getSingleOrdeMenuItems
+};
