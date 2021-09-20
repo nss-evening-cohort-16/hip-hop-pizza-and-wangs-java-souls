@@ -1,21 +1,27 @@
 import clearDom from '../helpers/auth/clearDom';
 
-const showOrderItems = (array) => {
+const showOrderItems = (obj) => {
   clearDom();
 
-  array.forEach((item) => {
-    document.querySelector('#shop').innerHTML += `
-    <div class="card" style="width: 30rem;">
+  document.querySelector('#view').innerHTML += `
+  <div id="menuItemView">
+  </div>`;
+
+  obj.menuItemObj.forEach((item) => {
+    document.querySelector('#menuItemView').innerHTML += `
+    <div class="card" style="width: 18rem;">
+      <div class="card-body">
+       <h5 class="card-title">${item.description}
+      </div>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item">${item.itemPrice}</li>
+      </ul>
         <div class="card-body">
-         <h5 class="card-title">${item.menuItem}</h5>
-             <h6 class="card-subtitle mb-2 text-muted">${item.itemPrice}</h6>
-             <a href="#" class="card-link">Card link</a>
-             <a href="#" class="card-link">Another link</a>
+          <button type="button" id="edit-btn" class="btn btn-outline-info">Edit</button>
+          <button type="button" id="delete-order--${item.firebaseKey}" class="btn btn-outline-danger">Delete</button>
         </div>
     </div>`;
   });
-
-  document.querySelector('#button-container').innerHTML = '<button type="button" class="btn btn-outline-success btn-lg" id="add-items-btn">Add Items</button><button type="button" class="btn btn-outline-primary btn-lg" id="payment-btn">Go To Payment</button>';
 };
 
 export default showOrderItems;

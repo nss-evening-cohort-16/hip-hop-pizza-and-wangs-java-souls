@@ -1,12 +1,12 @@
-import showOrderItems from '../../components/showOrderItems';
+import { getMenuItems } from './orderItemsData';
 import { getSingleOrder } from './ordersData';
 
 const viewOrderItems = (orderFirebaseKey) => new Promise((resolve, reject) => {
   getSingleOrder(orderFirebaseKey)
     .then((orderObj) => {
-      showOrderItems(orderObj.firebaseKey)
-        .then((orderItemsObj) => {
-          resolve({ orderItemsObj, ...orderObj });
+      getMenuItems(orderObj.menuItemID)
+        .then((menuItemObj) => {
+          resolve({ menuItemObj, ...orderObj });
         });
     }).catch(reject);
 });

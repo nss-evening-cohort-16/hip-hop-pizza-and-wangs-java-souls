@@ -3,7 +3,6 @@ import {
   getOrders,
   createOrder,
   deleteOrder,
-  getSingleOrder
 } from '../helpers/data/ordersData';
 import { createOrderitem } from '../helpers/data/orderItemsData';
 import paymentForm from '../components/forms/paymentForm';
@@ -12,6 +11,7 @@ import paymentForm from '../components/forms/paymentForm';
 import addOrderForm from '../components/forms/orderForm';
 import viewRevenuePage from '../components/revenue';
 import viewOrderItems from '../helpers/data/merdedData';
+import showOrderItems from '../components/showOrderItems';
 
 const domEvents = () => {
   document.querySelector('#main-container').addEventListener('click', (e) => {
@@ -74,7 +74,7 @@ const domEvents = () => {
     // VIEW ORDERS
     if (e.target.id.includes('details-btn')) {
       const [, firebaseKey] = e.target.id.split('--');
-      viewOrderItems(firebaseKey).then(getSingleOrder);
+      viewOrderItems(firebaseKey).then(showOrderItems);
     }
   });
 };
