@@ -30,5 +30,24 @@ const createOrderitem = (orderObject) => new Promise((resolve, reject) => {
         });
     }).catch((error) => reject(error));
 });
+// get orderMenuItems from Single Order
+// getOrderMenuItemsFromSingleOrder = (firebaseKey) => new Promise((resolve, reject)) => {
+// axios.get(`${dbUrl}/orderMenuItems.json?orderBy="orderID"&equalTo="${firebaseKey}""`)
+// .then((response) => resolve(response.data))
+// .catch(reject);
+// }
+// // delete order items
+// const menuItem = (firebaseKey) => new Promise((resolve, reject) => {
+//   axios.delete(`${dbUrl}/menuItem/${firebaseKey}.json`)
+//     .then(() => {
+//       getOrderItems().then(resolve);
+//     })
+//     .catch(reject);
+// });
+
+// Delete order items when order is deleted
+// const deleteOrderMenuItems = (orderId) => new Promise((resolve, reject) => {
+//
+// });
 
 export { getOrderItems, createOrderitem, getOrderDetails };
