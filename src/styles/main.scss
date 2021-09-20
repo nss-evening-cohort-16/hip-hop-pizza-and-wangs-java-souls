@@ -40,7 +40,28 @@ body {
           background-color: transparent;
           color: white;
         }
-}
+    }
+
+      #menuItemView {
+      width: 90%;
+      display: flex;
+      flex-flow: row wrap;
+      text-align: center;
+      margin: auto;
+      justify-content: center;
+
+      .card {
+        width: 300px;
+        margin: 5px;
+        background-color: transparent;
+        border-color: white;
+      }
+
+        .list-group-item {
+          background-color: transparent;
+          color: white;
+        }
+      }
 }
 
 #button-container {
