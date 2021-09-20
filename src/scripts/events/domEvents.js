@@ -5,6 +5,7 @@ import { createOrderitem, getOrderDetails } from '../helpers/data/orderItemsData
 import showOrderDetails from '../components/showOrderDetails';
 import addOrderForm from '../components/forms/orderForm';
 import viewRevenuePage from '../components/revenue';
+import viewOrderDetails from '../helpers/data/merdedData';
 
 const domEvents = () => {
   document.querySelector('#main-container').addEventListener('click', (e) => {
@@ -56,6 +57,11 @@ const domEvents = () => {
         const [, id] = e.target.id.split('--');
         deleteOrder(id).then(showOrders);
       }
+    }
+    // VIEW ORDERS
+    if (e.target.id.includes('details-btn')) {
+      const [, firebaseKey] = e.target.id.split('--');
+      viewOrderDetails(firebaseKey).then(showOrderDetails);
     }
   });
 };

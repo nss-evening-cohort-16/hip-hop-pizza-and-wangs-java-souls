@@ -21,6 +21,7 @@ const createOrder = (orderObject) => new Promise((resolve, reject) => {
         });
     }).catch((error) => reject(error));
 });
+
 // GET SINGLE ORDER
 const getSingleOrder = (firebaseKey) => new Promise((resolve, reject) => {
   axios.get(`${dbUrl}/orders/${firebaseKey}.json`)
