@@ -19,7 +19,7 @@ const viewRevenuePage = () => {
     </div>
     <div>
       <h3>DATE RANGE:</h3><br>
-      <h3>Interpolate Dates<h3>
+      <h3>Interpolate Dates<h3><br>
     </div>
     <div>
       <h3 id="totalTips">TOTAL TIPS:  </h3><br>
