@@ -88,6 +88,11 @@ const domEvents = () => {
       const [, firebaseKey] = e.target.id.split('--');
       viewOrderItems(firebaseKey).then(showOrderItems);
     }
+    // DELETE MENU ITEMS
+    if (e.target.id.includes('delete-menuItem')) {
+      const [, firebaseKey] = e.target.id.split('--');
+      viewOrderItems(firebaseKey).then(showOrderItems);
+    }
   });
 };
 
