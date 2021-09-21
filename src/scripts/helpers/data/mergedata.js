@@ -1,5 +1,5 @@
 import { getSingleOrdeMenuItems } from './orderItemsData';
-import getMenuItemsArray from './menuitems';
+import { getOrderTotal, getMenuItemsArray } from './menuitems';
 // API CALLS FOR BOOKS
 
 const viewOrderMenuItems = (orderFirebaseKey) => new Promise(() => {
@@ -8,4 +8,10 @@ const viewOrderMenuItems = (orderFirebaseKey) => new Promise(() => {
       getMenuItemsArray(menuitemarray);
     });
 });
-export default viewOrderMenuItems;
+const viewOrderTotal = (orderFirebaseKey) => new Promise(() => {
+  getSingleOrdeMenuItems(orderFirebaseKey)
+    .then((menuitemarray) => {
+      getOrderTotal(menuitemarray);
+    });
+});
+export { viewOrderMenuItems, viewOrderTotal };
