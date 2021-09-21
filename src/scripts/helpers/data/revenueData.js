@@ -68,7 +68,7 @@ const getRangeofDates = () => {
   getOrders()
     .then((ordersArray) => {
       let orderDates = ordersArray.map((order) => new Date(order.timeStamp));
-      orderDates = orderDates.sort();
+      orderDates = orderDates.sort().reverse();
       let firstDate = orderDates[0];
       let lastDate = orderDates[orderDates.length - 1];
       firstDate = new Intl.DateTimeFormat('ens-US').format(firstDate);
