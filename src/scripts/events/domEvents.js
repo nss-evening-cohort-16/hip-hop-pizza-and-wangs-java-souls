@@ -3,7 +3,9 @@ import {
   getOrders,
   createOrder,
   deleteOrder,
+  updateOrder
 } from '../helpers/data/ordersData';
+import viewOrderMenuItems from '../helpers/data/mergedata';
 import { createOrderitem } from '../helpers/data/orderItemsData';
 import paymentForm from '../components/forms/paymentForm';
 // import { createOrderitem, getOrderDetails } from '../helpers/data/orderItemsData';
@@ -26,7 +28,6 @@ const domEvents = () => {
     }
     if (e.target.id.includes('submit-order')) {
       e.preventDefault();
-      console.warn('submit-order');
       const orderObject = {
         customerEmail: document.querySelector('#custemail').value,
         customerName: document.querySelector('#orderName').value,
@@ -44,13 +45,11 @@ const domEvents = () => {
 
     if (e.target.id.includes('update-menuItem')) {
       e.preventDefault();
-      console.warn(document.querySelector('#OrderItem_id').value);
-      const [order, menyItem] = document.querySelector('#OrderItem_id').value.split('--');
-      // console.warn(document.querySelector('#orderNum').firebasekey);
+      const [order, menuItem] = document.querySelector('#OrderItem_id').value.split('--');
       // const [menu, price] = document.querySelector('#OrderItem_id').selectedOptions[0].text.split('--');
       const orderObject = {
         orderID: order,
-        menuItemID: menyItem
+        menuItemID: menuItem
       };
       createOrderitem(orderObject);
       // createOrderitem(orderObject).then(orderItemForm(orderObject));
@@ -59,8 +58,24 @@ const domEvents = () => {
 
     if (e.target.id.includes('payment')) {
       e.preventDefault();
-      paymentForm();
-      console.warn('payment');
+      const ordernum = document.querySelector('#payment').value;
+      paymentForm(ordernum);
+    }
+
+    if (e.target.id.includes('finish')) {
+      e.preventDefault();
+      const [ordernumber, paymentMethod] = document.querySelector('#transmethod').value.split('--');
+      const orderObject = {
+        ordernumber,
+        tipTotal: document.querySelector('#tipvalue').value,
+        paymentMethod
+      };
+      // ordernumber: document.querySelector('#orderID').value,
+      // tipTotal: document.querySelector('#tipvalue').value,
+      // paymentMethod: document.querySelector('#transmethod').value
+      console.warn(orderObject);
+      updateOrder(orderObject);
+      viewOrderMenuItems(ordernumber);
     }
 
     // Delete Orders

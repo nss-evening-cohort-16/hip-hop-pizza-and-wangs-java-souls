@@ -1,6 +1,6 @@
 import axios from 'axios';
 import firebaseConfig from '../../../api/apiKeys';
-import orderItemForm from '../../components/forms/OrderItemForm';
+import orderItemForm from '../../components/forms/orderItemForm';
 
 const dbUrl = firebaseConfig.databaseURL;
 // get orders
@@ -31,6 +31,13 @@ const createOrder = (orderObject) => new Promise((resolve, reject) => {
     }).catch((error) => reject(error));
 });
 
+const updateOrder = (orderObject) => {
+  const body = { tipTotal: orderObject.tipTotal, paymentMethod: orderObject.paymentMethod };
+  axios.patch(`${dbUrl}/orders/${orderObject.ordernumber}.json`, body).then(() => {
+    console.warn('done');
+  });
+};
+
 // DELETE
 const deleteOrder = (firebaseKey) => new Promise((resolve, reject) => {
   axios.delete(`${dbUrl}/orders/${firebaseKey}.json`)
@@ -44,5 +51,6 @@ export {
   getOrders,
   createOrder,
   getSingleOrder,
-  deleteOrder
+  deleteOrder,
+  updateOrder
 };
