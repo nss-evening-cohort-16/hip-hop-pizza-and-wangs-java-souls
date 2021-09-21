@@ -26,7 +26,7 @@ const addOrderForm = (obj = {}) => {
           </select>         
          </div>   </div>
          <button type="submit" 
-           id="${obj.firebaseKey ? `update-order--${obj.firebaseKey}` : 'submit-order'}" class="btn btn-primary">Submit Order
+           id="${obj.firebaseKey ? `update-order--${obj.firebaseKey}` : 'submit-order'}" class="btn btn-outline-primary">Submit Order
          </button>
        </form>`;
 };
