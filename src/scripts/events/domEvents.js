@@ -5,7 +5,7 @@ import {
   deleteOrder,
   updateOrder
 } from '../helpers/data/ordersData';
-import viewOrderMenuItems from '../helpers/data/mergedata';
+import viewOrderMenuItems from '../helpers/data/mergeData';
 import { createOrderitem } from '../helpers/data/orderItemsData';
 import paymentForm from '../components/forms/paymentForm';
 // import { createOrderitem, getOrderDetails } from '../helpers/data/orderItemsData';
