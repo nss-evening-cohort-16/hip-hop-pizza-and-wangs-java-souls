@@ -1,10 +1,18 @@
 import showOrders from '../components/orders';
-import { getOrders, createOrder, deleteOrder } from '../helpers/data/ordersData';
-import orderItemForm from '../components/forms/orderItemForm';
-import { createOrderitem, getOrderDetails } from '../helpers/data/orderItemsData';
-import showOrderDetails from '../components/showOrderDetails';
+import {
+  getOrders,
+  createOrder,
+  deleteOrder,
+  updateOrder
+} from '../helpers/data/ordersData';
+import viewOrderMenuItems from '../helpers/data/mergedata';
+import { createOrderitem } from '../helpers/data/orderItemsData';
+import paymentForm from '../components/forms/paymentForm';
+// import { createOrderitem, getOrderDetails } from '../helpers/data/orderItemsData';
+// import showOrderDetails from '../components/showOrderDetails';
 import addOrderForm from '../components/forms/orderForm';
 import viewRevenuePage from '../components/revenue';
+import orderItemForm from '../components/forms/orderItemForm';
 
 const domEvents = () => {
   document.querySelector('#main-container').addEventListener('click', (e) => {
@@ -19,7 +27,6 @@ const domEvents = () => {
     }
     if (e.target.id.includes('submit-order')) {
       e.preventDefault();
-      console.warn('submit-order');
       const orderObject = {
         customerEmail: document.querySelector('#custemail').value,
         customerName: document.querySelector('#orderName').value,
@@ -36,18 +43,37 @@ const domEvents = () => {
 
     if (e.target.id.includes('submit-MenuItem')) {
       e.preventDefault();
-      console.warn('submit-MenuItem');
-      console.warn(document.querySelector('#OrderItem_id').selectedOptions[0].text);
-      console.warn(document.querySelector('#OrderItem_id').selectedOptions[0].value);
-      const [menu, price] = document.querySelector('#OrderItem_id').selectedOptions[0].text.split('--');
+      const [order, menuItem] = document.querySelector('#OrderItem_id').value.split('--');
+      // const [menu, price] = document.querySelector('#OrderItem_id').selectedOptions[0].text.split('--');
       const orderObject = {
-        menuitem: menu,
-        itemprice: price,
-        orderId: document.querySelector('#OrderItem_id').selectedOptions[0].value,
-        menuItemID: document.querySelector('#OrderItem_id').selectedOptions[0].value
+        orderID: order,
+        menuItemID: menuItem
       };
-      createOrderitem(orderObject).then(orderItemForm(orderObject));
-      getOrderDetails().then((orderCards) => showOrderDetails(orderCards));
+      createOrderitem(orderObject);
+      // createOrderitem(orderObject).then(orderItemForm(orderObject));
+      // getOrderDetails().then((orderCards) => showOrderDetails(orderCards));
+    }
+
+    if (e.target.id.includes('payment')) {
+      e.preventDefault();
+      const ordernum = document.querySelector('#payment').value;
+      paymentForm(ordernum);
+    }
+
+    if (e.target.id.includes('finish')) {
+      e.preventDefault();
+      const [ordernumber, paymentMethod] = document.querySelector('#transmethod').value.split('--');
+      const orderObject = {
+        ordernumber,
+        tipTotal: document.querySelector('#tipvalue').value,
+        paymentMethod
+      };
+      // ordernumber: document.querySelector('#orderID').value,
+      // tipTotal: document.querySelector('#tipvalue').value,
+      // paymentMethod: document.querySelector('#transmethod').value
+      console.warn(orderObject);
+      updateOrder(orderObject);
+      viewOrderMenuItems(ordernumber);
     }
     // Delete Orders
     if (e.target.id.includes('delete-order')) {
