@@ -8,10 +8,11 @@ const showOrderItems = (obj) => {
   </div>`;
 
   obj.menuItemObj.forEach((item) => {
+    // console.warn();
     document.querySelector('#menuItemView').innerHTML += `
     <div class="card" style="width: 18rem;">
       <div class="card-body">
-       <h5 class="card-title">${item.description}
+       <h5 class="card-title">${item.menuItem}
       </div>
     <ul class="list-group list-group-flush">
       <li class="list-group-item">${item.itemPrice}</li>

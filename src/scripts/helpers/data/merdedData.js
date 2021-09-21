@@ -1,10 +1,10 @@
-import { getMenuItems } from './orderItemsData';
+import { getMenuItemsForOrder } from './menuitems';
 import { getSingleOrder } from './ordersData';
 
 const viewOrderItems = (orderFirebaseKey) => new Promise((resolve, reject) => {
   getSingleOrder(orderFirebaseKey)
     .then((orderObj) => {
-      getMenuItems(orderObj.menuItemID)
+      getMenuItemsForOrder(orderObj.firebaseKey)
         .then((menuItemObj) => {
           resolve({ menuItemObj, ...orderObj });
         });
