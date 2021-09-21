@@ -19,7 +19,7 @@ const showOrderItems = (obj) => {
       </ul>
         <div class="card-body">
           <button type="button" id="edit-btn" class="btn btn-outline-info">Edit</button>
-          <button type="button" id="delete-order--${item.firebaseKey}" class="btn btn-outline-danger">Delete</button>
+          <button type="button" id="delete-menuItem--${item.firebaseKey}" class="btn btn-outline-danger">Delete</button>
         </div>
     </div>`;
   });
