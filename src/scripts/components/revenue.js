@@ -3,11 +3,11 @@ import clearDom from '../helpers/auth/clearDom';
 const viewRevenuePage = () => {
   clearDom();
   document.querySelector('#view').innerHTML = `
-    <div>
+    <div class="revenueHeader">
       <h1>REVENUE</h1>
     </div>
-    <div
-      <h1>TOTAL REVENUE: </h1>
+    <div class="totalRevenueHeader">
+      <h1 id="totalRevenue">TOTAL REVENUE: </h1>
     </div>
     <div>
       <h3>DATE RANGE:</h3><br>

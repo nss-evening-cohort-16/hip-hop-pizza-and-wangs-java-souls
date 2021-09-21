@@ -1,13 +1,16 @@
 import { getOrders } from './ordersData';
 
-const getOrderTotal = () => {
+const getOrdersTotal = () => {
   getOrders()
     .then((ordersArray) => {
-      const ordersTotal = ordersArray.reduce((previous, current) => previous + current.orderTotal, 0);
-      console.warn(ordersTotal);
+      const reducer = (a, currentValue) => a + currentValue.orderTotal;
+      const ordersTotal = (ordersArray.reduce(reducer, 0));
+      const totalRev = Math.round(ordersTotal);
+      document.querySelector('#totalRevenue').innerHTML += `$${totalRev}`;
     });
 };
-const getOrderTip = () => {
 
-};
-export default (getOrderTotal, getOrderTip);
+// const getOrderTip = () => {
+
+// };
+export default getOrdersTotal;
