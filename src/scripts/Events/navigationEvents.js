@@ -3,7 +3,6 @@ import viewRevenuePage from '../components/revenue';
 import showHSbuttons from '../helpers/data/homeScreenButtonsCard';
 import addOrderForm from '../components/forms/orderForm';
 import { getOrders } from '../helpers/data/ordersData';
-import getOrdersTotal from '../helpers/data/revenueData';
 
 const navigationEvents = (user) => {
   // HOME
@@ -25,7 +24,6 @@ const navigationEvents = (user) => {
   document.querySelector('#revenue')
     .addEventListener('click', () => {
       viewRevenuePage();
-      getOrdersTotal();
     });
 };
 
