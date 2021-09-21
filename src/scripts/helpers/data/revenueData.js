@@ -69,7 +69,6 @@ const getRangeofDates = () => {
     .then((ordersArray) => {
       let orderDates = ordersArray.map((order) => new Date(order.timeStamp));
       orderDates = orderDates.sort();
-      console.warn(orderDates);
       const firstDate = orderDates[0].toDateString();
       const lastDate = orderDates[orderDates.length - 1].toDateString();
       document.querySelector('#dateRange').innerHTML += `${firstDate} - ${lastDate}`;
