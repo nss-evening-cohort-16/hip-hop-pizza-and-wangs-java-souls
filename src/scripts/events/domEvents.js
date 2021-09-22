@@ -117,7 +117,7 @@ const domEvents = () => {
       const orderObject = {
         customerEmail: document.querySelector('#custemail').value,
         customerName: document.querySelector('#orderName').value,
-        customerPhoneNumber: String(document.querySelector('#phone').value),
+        customerPhoneNumber: document.querySelector('#phone').value,
         orderType: document.querySelector('#orderType').value,
         firebaseKey
       };
@@ -127,7 +127,6 @@ const domEvents = () => {
     if (e.target.id.includes('edit-MenuItem')) {
       e.preventDefault();
       const [, firebasekey] = e.target.id.split('--');
-      console.warn(firebasekey);
       getSingleMenuItem(firebasekey).then((itemObject) => addUpdateMenuItemForm(itemObject));
     }
     // SUBMIT EDIT MENU ITEM

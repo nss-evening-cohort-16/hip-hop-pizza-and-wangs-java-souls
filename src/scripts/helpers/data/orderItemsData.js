@@ -53,7 +53,6 @@ const getSingleOrdeMenuItems = (firebaseKey) => new Promise((resolve, reject) =>
 // UPDATE MENU ITEM
 const updateMenuItem = (menuItemObject) => new Promise((resolve, reject) => {
   axios.patch(`${dbUrl}/menuItem/${menuItemObject.firebaseKey}.json`, menuItemObject)
-    .then(console.warn(menuItemObject))
     .then(() => getMenuItems(menuItemObject).then(resolve))
     .catch(reject);
 });
