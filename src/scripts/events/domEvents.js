@@ -6,14 +6,13 @@ import {
   updateOrder
 } from '../helpers/data/ordersData';
 // import { viewOrderMenuItems } from '../helpers/data/mergeData';
-import { viewOrderTotal } from '../helpers/data/mergeData';
+import { viewOrderTotal, viewOrderItems } from '../helpers/data/mergedata';
 import { createOrderitem } from '../helpers/data/orderItemsData';
 import paymentForm from '../components/forms/paymentForm';
 // import { createOrderitem, getOrderDetails } from '../helpers/data/orderItemsData';
 // import showOrderDetails from '../components/showOrderDetails';
 import addOrderForm from '../components/forms/orderForm';
 import viewRevenuePage from '../components/revenue';
-import viewOrderItems from '../helpers/data/merdedData';
 import showOrderItems from '../components/showOrderItems';
 
 const domEvents = () => {
