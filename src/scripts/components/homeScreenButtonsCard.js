@@ -1,4 +1,4 @@
-import clearDom from '../auth/clearDom';
+import clearDom from '../helpers/auth/clearDom';
 
 const showHSbuttons = (user) => {
   clearDom();

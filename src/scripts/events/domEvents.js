@@ -32,7 +32,7 @@ const domEvents = () => {
         customerEmail: document.querySelector('#custemail').value,
         customerName: document.querySelector('#orderName').value,
         customerPhoneNumber: document.querySelector('#phone').value,
-        orderStatus: '',
+        orderStatus: true,
         orderTotal: 0,
         orderType: document.querySelector('#orderType').value,
         paymentMethod: '',
