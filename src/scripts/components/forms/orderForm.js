@@ -6,7 +6,7 @@ const addOrderForm = (obj = {}) => {
       <div class="card order-card">
        <form id="submit-menu-form" class="mb-4">
            <div class="form-group">
-           <label for="orderName">Order Name</label>
+           <label h5 for="orderName">Order Name</label>
            <input type="text" class="form-control" id="orderName" aria-describedby="orderName" placeholder="Enter your Name" value="${obj.customerName || ''}" required>
            </div>
            <div class="form-group">
@@ -32,4 +32,5 @@ const addOrderForm = (obj = {}) => {
        </form>
        </div>`;
 };
+
 export default addOrderForm;

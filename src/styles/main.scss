@@ -15,16 +15,17 @@ body {
   align-content: center;
 
   #form-container {
-    width: 60%;
+    width: 70%;
     margin: auto;
+
     display: flex;
     justify-content: center;
     align-items: center;
     align-self: center;
-    color: white;
     background-color: transparent;
     .order-card{
-      
+      width: 45rem;
+      margin-top: 10rem;
       border-color: white;
       background-color: transparent;
     }
