@@ -5,14 +5,14 @@ import {
   deleteOrder,
   updateOrder
 } from '../helpers/data/ordersData';
-import viewOrderMenuItems from '../helpers/data/mergedata';
+// import { viewOrderMenuItems } from '../helpers/data/mergeData';
+import { viewOrderTotal, viewOrderItems } from '../helpers/data/mergedata';
 import { createOrderitem } from '../helpers/data/orderItemsData';
 import paymentForm from '../components/forms/paymentForm';
 // import { createOrderitem, getOrderDetails } from '../helpers/data/orderItemsData';
 // import showOrderDetails from '../components/showOrderDetails';
 import addOrderForm from '../components/forms/orderForm';
 import viewRevenuePage from '../components/revenue';
-import viewOrderItems from '../helpers/data/merdedData';
 import showOrderItems from '../components/showOrderItems';
 
 const domEvents = () => {
@@ -64,18 +64,21 @@ const domEvents = () => {
 
     if (e.target.id.includes('finish')) {
       e.preventDefault();
+      const orderTotal = 10;
       const [ordernumber, paymentMethod] = document.querySelector('#transmethod').value.split('--');
       const orderObject = {
         ordernumber,
         tipTotal: document.querySelector('#tipvalue').value,
-        paymentMethod
+        paymentMethod,
+        orderTotal
       };
       // ordernumber: document.querySelector('#orderID').value,
       // tipTotal: document.querySelector('#tipvalue').value,
       // paymentMethod: document.querySelector('#transmethod').value
       console.warn(orderObject);
       updateOrder(orderObject);
-      viewOrderMenuItems(ordernumber);
+      // viewOrderMenuItems(ordernumber);
+      viewOrderTotal(ordernumber);
     }
 
     // Delete Orders
