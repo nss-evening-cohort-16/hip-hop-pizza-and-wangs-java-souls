@@ -6,10 +6,11 @@ import {
   updateOrder
 } from '../helpers/data/ordersData';
 // import { viewOrderMenuItems } from '../helpers/data/mergeData';
-
+import { viewOrderTotal, viewOrderItems } from '../helpers/data/mergedata';
 import { createOrderitem } from '../helpers/data/orderItemsData';
 import paymentForm from '../components/forms/paymentForm';
 // import { createOrderitem, getOrderDetails } from '../helpers/data/orderItemsData';
+// import showOrderDetails from '../components/showOrderDetails';
 import addOrderForm from '../components/forms/orderForm';
 import viewRevenuePage from '../components/revenue';
 import showOrderItems from '../components/showOrderItems';
@@ -38,10 +39,11 @@ const domEvents = () => {
         timeStamp: new Date(),
         tipTotal: 0
       };
-      createOrder(orderObject).then(orderItemForm(orderObject));
+
+      createOrder(orderObject);
     }
 
-    if (e.target.id.includes('submit-MenuItem')) {
+    if (e.target.id.includes('update-menuItem')) {
       e.preventDefault();
       const [order, menuItem] = document.querySelector('#OrderItem_id').value.split('--');
       // const [menu, price] = document.querySelector('#OrderItem_id').selectedOptions[0].text.split('--');
@@ -78,6 +80,7 @@ const domEvents = () => {
       // viewOrderMenuItems(ordernumber);
       viewOrderTotal(ordernumber);
     }
+
     // Delete Orders
     if (e.target.id.includes('delete-order')) {
       // eslint-disable-next-line no-alert
@@ -86,6 +89,7 @@ const domEvents = () => {
         deleteOrder(id).then(showOrders);
       }
     }
+    // VIEW ORDERS
     if (e.target.id.includes('details-btn')) {
       const [, firebaseKey] = e.target.id.split('--');
       viewOrderItems(firebaseKey).then(showOrderItems);

@@ -20,20 +20,6 @@ const getMenuItemsForOrder = (firebaseKey) => new Promise((resolve, reject) => {
 //     .catch((reject));
 // });
 
-<<<<<<< HEAD
-const getMenuItemsArray = (item) => new Promise((resolve, reject) => {
-  axios.get(`${dbUrl}/menuItem.json?orderBy="firebaseKey"&equalTo="${item.menuItemID}"`)
-    .then((response) => resolve(response.data.itemPrice))
-    .catch(reject);
-});
-
-const getMenuItemsForOrder = (firebaseKey) => new Promise((resolve, reject) => {
-  axios.get(`${dbUrl}/menuItem.json?orderBy="firebaseKey"&equalTo="${firebaseKey}"`)
-    .then((response) => resolve(Object.values(response.data)))
-    .catch((reject));
-});
-export { getMenuItemsArray, getMenuItemsForOrder };
-=======
 const getOrderTotal = (MenuItemsArray) => {
   let menuitemsflat = 0;
   MenuItemsArray.forEach((item) => {
@@ -57,4 +43,3 @@ const getMenuItemsArray = (MenuItemsArray) => {
 };
 
 export { getOrderTotal, getMenuItemsArray, getMenuItemsForOrder };
->>>>>>> Development
