@@ -57,11 +57,6 @@ const deleteMenuItem = (firebaseKey) => new Promise((resolve, reject) => {
 // });
 
 const getSingleOrdeMenuItems = (firebaseKey) => new Promise((resolve, reject) => {
-  console.warn('getSingleOrdeMenuItems');
-  console.warn(firebaseKey);
-  // axios.get(`${dbUrl}/orderMenuItems.json?orderBy="orderID"&equalTo="-Mk3x-PWeG5f9hevIlu_"`)
-  // .then((response) => resolve(Object.values(response.data)))
-  // .then((response) => console.warn(Object.values(response.data)))
   axios.get(`${dbUrl}/orderMenuItems.json?orderBy="orderID"&equalTo="${firebaseKey}"`)
     .then((response) => resolve(Object.values(response.data)))
     .catch((error) => reject(error));

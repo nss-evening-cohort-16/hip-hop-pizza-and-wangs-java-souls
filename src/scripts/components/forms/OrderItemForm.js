@@ -10,8 +10,13 @@ const orderItemForm = (obj = {}) => {
   </div>       
   <div class="form-group" id="select-Menu">
   </div>
+<<<<<<< HEAD
   <button type="button" class="btn btn-outline-success" id="update-menuItem">Add to Cart</button>
   <button type="button" class="btn btn-outline-info" value="${obj.firebaseKey || ''}" id="payment">Payment</button>
+=======
+  <button type="button" class="btn btn-success" id="update-menuItem">Add to Cart</button>
+  <button type="button" class="btn btn-info" value="${obj.firebaseKey || ''}" id="payment"> Proceed to payment</button>
+>>>>>>> Development
   </form>`;
   // <button type="submit"
   // id="${obj.firebaseKey ? `update-menuItem'--${obj.firebaseKey}` : 'submit-menuItem'}" class="btn btn-primary">Add to cart

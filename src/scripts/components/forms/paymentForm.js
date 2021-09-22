@@ -17,8 +17,13 @@ const paymentForm = (obj = {}) => {
           <option value="${obj}--GiftCard">GiftCard</option>
         </select>
         </div></div>    
+<<<<<<< HEAD
          <button type="Close Order" 
            id="submit-finish" class="btn btn-outline-primary">Payment
+=======
+         <button type="submit" 
+           id="submit-finish" class="btn btn-primary">Submit Order
+>>>>>>> Development
          </button>
        </form>`;
 };
