@@ -18,7 +18,7 @@ const paymentForm = (obj = {}) => {
         </select>
         </div></div>    
          <button type="submit" 
-           id="submit-finish" class="btn btn-primary">Payment
+           id="submit-finish" class="btn btn-primary">Submit Order
          </button>
        </form>`;
 };

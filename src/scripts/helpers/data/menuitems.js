@@ -1,5 +1,6 @@
 import axios from 'axios';
 import firebaseConfig from '../../../api/apiKeys';
+import { getSingleOrdeMenuItems } from './orderItemsData';
 
 const dbUrl = firebaseConfig.databaseURL;
 const getSingleMenuItem = (firebaseKey) => new Promise((resolve, reject) => {
@@ -8,28 +9,34 @@ const getSingleMenuItem = (firebaseKey) => new Promise((resolve, reject) => {
     .catch((error) => reject(error));
 });
 
+const getOrderTotal = (orderFirebaseKey) => new Promise((resolve, reject) => {
+  // let menuitemsflat = 0;
+  getSingleOrdeMenuItems(orderFirebaseKey).then((mitems) => {
+    const menuItemArray = mitems.map((menuItem) => getSingleMenuItem(menuItem.menuItemID));
+    menuItemArray.forEach((item) => {
+      Promise.all([...menuItemArray]).then(() => console.warn(item.itemPrice));
+    });
+  }).catch(reject);
+});
+
+// MenuItemsArray.forEach((item) => {
+//   const outputItem = Promise.all(getSingleMenuItem(item.menuItemID));
+//   console.warn('outputitem', outputItem);
+//   menuitemsflat += outputItem.itemPrice;
+// }).then(() => resolve(menuitemsflat))
+
+// const deleteAuthorBooks = (authorId) => new Promise((resolve, reject) => {
+//   getAuthorBooks(authorId).then((authorsBookArray) => {
+//     const deleteBooks = authorsBookArray.map((book) => deleteBook(book.firebaseKey));
+//     Promise.all([...deleteBooks]).then(() => resolve(deleteSingleAuthor(authorId)));
+//   }).catch(reject);
+// });
+
 const getMenuItemsForOrder = (firebaseKey) => new Promise((resolve, reject) => {
   axios.get(`${dbUrl}/menuItem.json?orderBy="firebaseKey"&equalTo="${firebaseKey}"`)
     .then((response) => resolve(Object.values(response.data)))
     .catch((reject));
 });
-
-// const getAllMenuItems = (menuItemID) => new Promise((resolve, reject) => {
-//   axios.get(`${dbUrl}/orderMenuItems.json?orderBy="menuItemID"&equalTo="${menuItemID}"`)
-//     .then((response) => resolve(Object.values(response.data)))
-//     .catch((reject));
-// });
-
-const getOrderTotal = (MenuItemsArray) => {
-  let menuitemsflat = 0;
-  MenuItemsArray.forEach((item) => {
-    console.warn('getOrderTotal', item);
-    getSingleMenuItem(item.menuItemID).then((outputItem) => {
-      menuitemsflat += outputItem.itemPrice;
-      console.warn(menuitemsflat);
-    });
-  });
-};
 
 const getMenuItemsArray = (MenuItemsArray) => {
   const menuitemsflat = [];
@@ -45,6 +52,11 @@ const getMenuItemsArray = (MenuItemsArray) => {
 export {
   getOrderTotal,
   getMenuItemsArray,
+<<<<<<< HEAD
   getMenuItemsForOrder,
   getSingleMenuItem
+=======
+  getSingleMenuItem,
+  getMenuItemsForOrder
+>>>>>>> Development
 };
