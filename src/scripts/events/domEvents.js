@@ -65,21 +65,16 @@ const domEvents = () => {
 
     if (e.target.id.includes('finish')) {
       e.preventDefault();
-      const orderTotal = 10;
       const [ordernumber, paymentMethod] = document.querySelector('#transmethod').value.split('--');
-      const orderObject = {
-        ordernumber,
-        tipTotal: document.querySelector('#tipvalue').value,
-        paymentMethod,
-        orderTotal
-      };
-      // ordernumber: document.querySelector('#orderID').value,
-      // tipTotal: document.querySelector('#tipvalue').value,
-      // paymentMethod: document.querySelector('#transmethod').value
-      console.warn(orderObject);
-      updateOrder(orderObject);
-      // viewOrderMenuItems(ordernumber);
-      viewOrderTotal(ordernumber);
+      viewOrderTotal(ordernumber).then((orderTotal) => {
+        const orderObject = {
+          ordernumber,
+          tipTotal: document.querySelector('#tipvalue').value,
+          paymentMethod,
+          orderTotal
+        };
+        updateOrder(orderObject);
+      });
     }
 
     // Delete Orders
