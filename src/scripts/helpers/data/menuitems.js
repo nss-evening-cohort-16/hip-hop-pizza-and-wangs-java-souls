@@ -42,4 +42,9 @@ const getMenuItemsArray = (MenuItemsArray) => {
   console.warn('menuitemsflat', menuitemsflat);
 };
 
-export { getOrderTotal, getMenuItemsArray, getMenuItemsForOrder };
+export {
+  getOrderTotal,
+  getMenuItemsArray,
+  getMenuItemsForOrder,
+  getSingleMenuItem
+};

@@ -37,7 +37,12 @@ const updateOrder = (orderObject) => {
     console.warn('done');
   });
 };
-
+// EDIT ORDER
+const editOrder = (orderObject) => new Promise((resolve, reject) => {
+  axios.patch(`${dbUrl}/orders/${orderObject.firebaseKey}.json`, orderObject)
+    .then(() => getOrders(orderObject).then(resolve))
+    .catch(reject);
+});
 // DELETE
 const deleteOrder = (firebaseKey) => new Promise((resolve, reject) => {
   axios.delete(`${dbUrl}/orders/${firebaseKey}.json`)
@@ -52,5 +57,6 @@ export {
   createOrder,
   getSingleOrder,
   deleteOrder,
-  updateOrder
+  updateOrder,
+  editOrder
 };
