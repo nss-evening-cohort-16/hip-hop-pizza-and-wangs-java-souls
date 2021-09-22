@@ -127,6 +127,7 @@ const domEvents = () => {
     if (e.target.id.includes('edit-MenuItem')) {
       e.preventDefault();
       const [, firebasekey] = e.target.id.split('--');
+      console.warn(firebasekey);
       getSingleMenuItem(firebasekey).then((itemObject) => addUpdateMenuItemForm(itemObject));
     }
     // SUBMIT EDIT MENU ITEM
@@ -136,7 +137,7 @@ const domEvents = () => {
       const menuItemObject = {
         menuItem: document.querySelector('#itemName').value,
         itemPrice: document.querySelector('#itemPrice').value,
-        firebaseKey
+        firebaseKey,
       };
       updateMenuItem(menuItemObject);
       getOrders().then(showOrders);

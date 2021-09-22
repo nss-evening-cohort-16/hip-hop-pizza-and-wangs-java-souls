@@ -13,7 +13,7 @@ const addUpdateMenuItemForm = (obj = {}) => {
   <input type="number" class="form-control" id="itemPrice" aria-describedby="itemPrice" placeholder="${obj.itemPrice}" value="${obj.itemPrice || ''}" required>
 </div>
 <button type="submit" 
-id="update-MenuItemSubmit--${obj.firebaseKey}}" class="btn btn-primary">Update Item</button>
+id="update-MenuItemSubmit--${obj.firebaseKey}" class="btn btn-primary">Update Item</button>
 </form>
     `;
 };
