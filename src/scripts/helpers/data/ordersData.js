@@ -32,7 +32,7 @@ const createOrder = (orderObject) => new Promise((resolve, reject) => {
 });
 
 const updateOrder = (orderObject) => {
-  const body = { tipTotal: orderObject.tipTotal, paymentMethod: orderObject.paymentMethod };
+  const body = { tipTotal: orderObject.tipTotal, paymentMethod: orderObject.paymentMethod, orderTotal: orderObject.orderTotal };
   axios.patch(`${dbUrl}/orders/${orderObject.ordernumber}.json`, body).then(() => {
     console.warn('done');
   });
