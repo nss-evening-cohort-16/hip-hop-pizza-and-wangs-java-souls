@@ -10,4 +10,5 @@ const viewOrderMenuItems = (orderFirebaseKey) => new Promise(() => {
       console.warn(menuitemarray);
     });
 });
+
 export default viewOrderMenuItems;
