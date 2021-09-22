@@ -68,7 +68,7 @@ const domEvents = () => {
       const [ordernumber, paymentMethod] = document.querySelector('#transmethod').value.split('--');
       const orderObject = {
         ordernumber,
-        tipTotal: document.querySelector('#tipvalue').value,
+        tipTotal: Number(document.querySelector('#tipvalue').value),
         paymentMethod,
         orderTotal
       };
