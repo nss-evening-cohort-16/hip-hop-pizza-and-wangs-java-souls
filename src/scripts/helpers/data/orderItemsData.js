@@ -40,11 +40,6 @@ const deleteMenuItem = (firebaseKey) => new Promise((resolve, reject) => {
     .catch(reject);
 });
 
-// Delete order items when order is deleted
-// const deleteOrderMenuItems = (orderId) => new Promise((resolve, reject) => {
-//
-// });
-
 const getSingleOrdeMenuItems = (firebaseKey) => new Promise((resolve, reject) => {
   axios.get(`${dbUrl}/orderMenuItems.json?orderBy="orderID"&equalTo="${firebaseKey}"`)
     .then((response) => resolve(Object.values(response.data)))
