@@ -13,4 +13,10 @@ const getMenuItemsArray = (item) => new Promise((resolve, reject) => {
     .then((response) => resolve(response.data.itemPrice))
     .catch(reject);
 });
-export default getMenuItemsArray;
+
+const getMenuItemsForOrder = (firebaseKey) => new Promise((resolve, reject) => {
+  axios.get(`${dbUrl}/menuItem.json?orderBy="firebaseKey"&equalTo="${firebaseKey}"`)
+    .then((response) => resolve(Object.values(response.data)))
+    .catch((reject));
+});
+export { getMenuItemsArray, getMenuItemsForOrder };

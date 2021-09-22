@@ -3,7 +3,7 @@ import clearDom from '../../helpers/auth/clearDom';
 const addOrderForm = (obj = {}) => {
   clearDom();
   document.querySelector('#form-container').innerHTML = `
-       <form id="submit-menu-form" class="mb-4">
+       <form id="submit-menu-form" class="menu-form mb-4">
            <div class="form-group">
            <label for="orderName">Order Name</label>
            <input type="text" class="form-control" id="orderName" aria-describedby="orderName" placeholder="Enter your Name" value="${obj.customerName || ''}" required>
