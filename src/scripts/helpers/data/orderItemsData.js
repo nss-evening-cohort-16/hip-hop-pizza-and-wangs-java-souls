@@ -51,9 +51,10 @@ const getSingleOrdeMenuItems = (firebaseKey) => new Promise((resolve, reject) =>
     .catch((error) => reject(error));
 });
 // UPDATE MENU ITEM
-const updateMenuItem = (itemObject) => new Promise((resolve, reject) => {
-  axios.patch(`${dbUrl}/menuItem/${itemObject.firebaseKey}.json`, itemObject)
-    .then(() => getMenuItems(itemObject).then(resolve))
+const updateMenuItem = (menuItemObject) => new Promise((resolve, reject) => {
+  axios.patch(`${dbUrl}/menuItem/${menuItemObject.firebaseKey}.json`, menuItemObject)
+    .then(console.warn(menuItemObject))
+    .then(() => getMenuItems(menuItemObject).then(resolve))
     .catch(reject);
 });
 

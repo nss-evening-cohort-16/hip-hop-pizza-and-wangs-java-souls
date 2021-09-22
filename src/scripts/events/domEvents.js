@@ -9,7 +9,7 @@ import {
 } from '../helpers/data/ordersData';
 // import { viewOrderMenuItems } from '../helpers/data/mergeData';
 import { viewOrderTotal, viewOrderItems } from '../helpers/data/mergedata';
-import { createOrderitem } from '../helpers/data/orderItemsData';
+import { createOrderitem, updateMenuItem } from '../helpers/data/orderItemsData';
 import paymentForm from '../components/forms/paymentForm';
 // import { createOrderitem, getOrderDetails } from '../helpers/data/orderItemsData';
 // import showOrderDetails from '../components/showOrderDetails';
@@ -82,7 +82,8 @@ const domEvents = () => {
       // paymentMethod: document.querySelector('#transmethod').value
       console.warn(orderObject);
       viewOrderTotal(ordernumber);
-      updateOrder(orderObject).then(showOrders);
+      updateOrder(orderObject);
+      getOrders().then(showOrders);
       // viewOrderMenuItems(ordernumber);
     }
 
@@ -127,6 +128,18 @@ const domEvents = () => {
       e.preventDefault();
       const [, firebasekey] = e.target.id.split('--');
       getSingleMenuItem(firebasekey).then((itemObject) => addUpdateMenuItemForm(itemObject));
+    }
+    // SUBMIT EDIT MENU ITEM
+    if (e.target.id.includes('update-MenuItemSubmit')) {
+      e.preventDefault();
+      const [, firebaseKey] = e.target.id.split('--');
+      const menuItemObject = {
+        menuItem: document.querySelector('#itemName').value,
+        itemPrice: document.querySelector('#itemPrice').value,
+        firebaseKey
+      };
+      updateMenuItem(menuItemObject);
+      getOrders().then(showOrders);
     }
   });
 };
