@@ -89,7 +89,7 @@ const domEvents = () => {
         deleteOrder(id).then(showOrders);
       }
     }
-    // VIEW ORDERS
+    // VIEW ORDERS ITEMS
     if (e.target.id.includes('details-btn')) {
       const [, firebaseKey] = e.target.id.split('--');
       viewOrderItems(firebaseKey).then(showOrderItems);
