@@ -18,7 +18,7 @@ const showOrderItems = (obj) => {
       <li class="list-group-item">${item.itemPrice}</li>
       </ul>
         <div class="card-body">
-          <button type="button" id="edit-btn" class="btn btn-outline-info">Edit</button>
+          <button type="button" id="edit-MenuItem--${item.firebaseKey}" class="btn btn-outline-info">Edit</button>
           <button type="button" id="delete-menuItem--${item.firebaseKey}" class="btn btn-outline-danger">Delete</button>
         </div>
     </div>`;
