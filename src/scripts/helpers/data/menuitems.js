@@ -52,11 +52,6 @@ const getMenuItemsArray = (MenuItemsArray) => {
 export {
   getOrderTotal,
   getMenuItemsArray,
-<<<<<<< HEAD
-  getMenuItemsForOrder,
-  getSingleMenuItem
-=======
   getSingleMenuItem,
   getMenuItemsForOrder
->>>>>>> Development
 };
