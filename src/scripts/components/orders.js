@@ -17,7 +17,7 @@ const showOrders = (array) => {
         </ul>
         <div class="card-body">
           <button type="button" id="details-btn--${item.firebaseKey}" class="btn btn-outline-primary">Details</button>
-          <button type="button" id="edit-btn" class="btn btn-outline-info">Edit</button>
+          <button type="button" id="edit-btn--${item.firebaseKey}" class="btn btn-outline-info">Edit</button>
           <button type="button" id="delete-order--${item.firebaseKey}" class="btn btn-outline-danger">Delete</button>
         </div>
       </div>`;
