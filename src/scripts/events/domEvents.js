@@ -73,6 +73,7 @@ const domEvents = () => {
           orderTotal
         };
         updateOrder(orderObject);
+        getOrders().then((orderCards) => showOrders(orderCards));
       });
     }
 
@@ -87,6 +88,7 @@ const domEvents = () => {
     // VIEW ORDERS
     if (e.target.id.includes('details-btn')) {
       const [, firebaseKey] = e.target.id.split('--');
+      console.warn('dom', firebaseKey);
       viewOrderItems(firebaseKey).then(showOrderItems);
     }
     // DELETE MENU ITEMS
