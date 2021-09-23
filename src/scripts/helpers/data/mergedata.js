@@ -37,5 +37,14 @@ const viewOrderItems = (orderFirebaseKey) => new Promise((resolve, reject) => {
         });
     }).catch(reject);
 });
+// const viewOrderItems = (orderFirebaseKey) => new Promise((resolve, reject) => {
+//   getSingleOrdeMenuItems(orderFirebaseKey).then((mitems) => {
+//     const menuItemArrays = mitems.map((menuItem) => getSingleMenuItem(menuItem.menuItemID));
+//     console.warn(menuItemArrays);
+//     Promise.all([...menuItemArrays]).then((array) => {
+//       resolve( array ]);
+//     });
+//   }).catch(reject);
+// });
 
 export { viewOrderMenuItems, viewOrderTotal, viewOrderItems };
