@@ -52,6 +52,7 @@ const domEvents = () => {
         menuItemID: menuItem
       };
       createOrderitem(orderObject);
+      // viewOrderItems(order).then(showOrderItems);
       // createOrderitem(orderObject).then(orderItemForm(orderObject));
       // getOrderDetails().then((orderCards) => showOrderDetails(orderCards));
     }

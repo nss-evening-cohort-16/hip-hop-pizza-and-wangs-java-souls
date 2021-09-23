@@ -34,7 +34,7 @@ const viewOrderItems = (orderFirebaseKey) => new Promise((resolve, reject) => {
     const menuItemArray = mitems.map((menuItem) => getSingleMenuItem(menuItem.menuItemID));
     console.warn(menuItemArray);
     Promise.all([...menuItemArray]).then((orderArray) => {
-      resolve([orderArray]);
+      resolve([...orderArray]);
     });
   }).catch(reject);
 });
