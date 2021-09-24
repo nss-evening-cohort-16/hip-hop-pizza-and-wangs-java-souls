@@ -57,6 +57,7 @@ const domEvents = () => {
         menuItemID: menuItem
       };
       createOrderitem(orderObject);
+      // viewOrderItems(order).then(showOrderItems);
       // createOrderitem(orderObject).then(orderItemForm(orderObject));
       // getOrderDetails().then((orderCards) => showOrderDetails(orderCards));
     }
@@ -78,6 +79,7 @@ const domEvents = () => {
           orderTotal
         };
         updateOrder(orderObject);
+        getOrders().then((orderCards) => showOrders(orderCards));
       });
     }
 
@@ -92,6 +94,7 @@ const domEvents = () => {
     // VIEW ORDERS
     if (e.target.id.includes('details-btn')) {
       const [, firebaseKey] = e.target.id.split('--');
+      console.warn('dom', firebaseKey);
       viewOrderItems(firebaseKey).then(showOrderItems);
     }
     // DELETE MENU ITEMS

@@ -1,14 +1,14 @@
 import clearDom from '../helpers/auth/clearDom';
 
-const showOrderItems = (obj) => {
+const showOrderItems = (orderArray) => {
   clearDom();
-
+  console.warn('orderArray', orderArray);
   document.querySelector('#view').innerHTML += `
   <div id="menuItemView">
   </div>`;
 
-  obj.menuItemObj.forEach((item) => {
-    // console.warn();
+  orderArray.forEach((item) => {
+    console.warn('inside', item);
     document.querySelector('#menuItemView').innerHTML += `
     <div class="card" style="width: 18rem;">
       <div class="card-body">
