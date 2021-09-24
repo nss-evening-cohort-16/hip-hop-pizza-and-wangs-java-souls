@@ -1,8 +1,7 @@
 // API CALLS FOR AUTHORS
 import axios from 'axios';
 import firebaseConfig from '../../../api/apiKeys';
-// import { getOrders } from './ordersData';
-
+import { viewOrderItems } from './mergedata';
 // API CALLS FOR BOOKS
 
 const dbUrl = firebaseConfig.databaseURL;
@@ -31,20 +30,28 @@ const createOrderitem = (orderObject) => new Promise((resolve, reject) => {
     }).catch((error) => reject(error));
 });
 
-// delete menu items
-const deleteMenuItem = (firebaseKey) => new Promise((resolve, reject) => {
-  axios.delete(`${dbUrl}/menuItem/${firebaseKey}.json`)
-    .then(() => {
-      getMenuItems().then(resolve);
-    })
-    .catch(reject);
-});
-
 const getSingleOrdeMenuItems = (firebaseKey) => new Promise((resolve, reject) => {
   axios.get(`${dbUrl}/orderMenuItems.json?orderBy="orderID"&equalTo="${firebaseKey}"`)
     .then((response) => resolve(Object.values(response.data)))
     .catch((error) => reject(error));
 });
+
+// delete menu items
+const deleteMenuItem = (firebaseKey) => new Promise((resolve, reject) => {
+  axios.delete(`${dbUrl}/orderMenuItems/${firebaseKey}.json`)
+    .then(() => {
+      viewOrderItems().then(resolve);
+    })
+    .catch(reject);
+});
+
+const deleteOrderMenuItem = (firebaseKey, menuItemID) => {
+  getSingleOrdeMenuItems().then(() => {
+    if (menuItemID === firebaseKey) {
+      deleteMenuItem();
+    }
+  });
+};
 // UPDATE MENU ITEM
 const updateMenuItem = (menuItemObject) => new Promise((resolve, reject) => {
   axios.patch(`${dbUrl}/menuItem/${menuItemObject.firebaseKey}.json`, menuItemObject)
@@ -57,6 +64,7 @@ export {
   createOrderitem,
   getOrderDetails,
   getSingleOrdeMenuItems,
+  updateMenuItem,
   deleteMenuItem,
-  updateMenuItem
+  deleteOrderMenuItem
 };
