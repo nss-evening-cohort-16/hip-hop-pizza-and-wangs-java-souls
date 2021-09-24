@@ -1,10 +1,11 @@
 import { getSingleOrdeMenuItems } from './orderItemsData';
 import {
   getMenuItemsArray,
-  getMenuItemsForOrder,
   getSingleMenuItem
 } from './menuitems';
-import { getSingleOrder } from './ordersData';
+
+// import { getSingleOrder } from './ordersData';
+//   getMenuItemsForOrder
 // API CALLS FOR BOOKS
 
 const viewOrderMenuItems = (orderFirebaseKey) => new Promise(() => {
@@ -29,13 +30,13 @@ const viewOrderTotal = (orderFirebaseKey) => new Promise((resolve, reject) => {
 });
 
 const viewOrderItems = (orderFirebaseKey) => new Promise((resolve, reject) => {
-  getSingleOrder(orderFirebaseKey)
-    .then((orderObj) => {
-      getMenuItemsForOrder(orderObj.firebaseKey)
-        .then((menuItemObj) => {
-          resolve({ menuItemObj, ...orderObj });
-        });
-    }).catch(reject);
+  getSingleOrdeMenuItems(orderFirebaseKey).then((mitems) => {
+    const menuItemArray = mitems.map((menuItem) => getSingleMenuItem(menuItem.menuItemID));
+    console.warn(menuItemArray);
+    Promise.all([...menuItemArray]).then((orderArray) => {
+      resolve([...orderArray]);
+    });
+  }).catch(reject);
 });
 // const viewOrderItems = (orderFirebaseKey) => new Promise((resolve, reject) => {
 //   getSingleOrdeMenuItems(orderFirebaseKey).then((mitems) => {
@@ -45,6 +46,24 @@ const viewOrderItems = (orderFirebaseKey) => new Promise((resolve, reject) => {
 //       resolve( array ]);
 //     });
 //   }).catch(reject);
+// });
+
+// const viewOrderItems_old = (orderFirebaseKey) => new Promise((resolve, reject) => {
+//   getSingleOrdeMenuItems(orderFirebaseKey).then((mitems) => {
+//     const menuItemArray = mitems.map((menuItem) => getSingleMenuItem(menuItem.menuItemID));
+//     console.warn(menuItemArray);
+//     Promise.all([...menuItemArray]).then(resolve);
+//   }).catch(reject);
+// });
+
+// const viewOrderItems = (orderFirebaseKey) => new Promise((resolve, reject) => {
+//   getSingleOrder(orderFirebaseKey)
+//     .then((orderObj) => {
+//       getMenuItemsForOrder(orderObj.firebaseKey)
+//         .then((menuItemObj) => {
+//           resolve({ menuItemObj, ...orderObj });
+//         });
+//     }).catch(reject);
 // });
 
 export { viewOrderMenuItems, viewOrderTotal, viewOrderItems };
