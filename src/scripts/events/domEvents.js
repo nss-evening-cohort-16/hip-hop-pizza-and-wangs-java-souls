@@ -8,8 +8,8 @@ import {
   editOrder
 } from '../helpers/data/ordersData';
 // import { viewOrderMenuItems } from '../helpers/data/mergeData';
-import { viewOrderTotal, viewOrderItems } from '../helpers/data/mergedata';
-import { createOrderitem, updateMenuItem, deleteOrderMenuItem } from '../helpers/data/orderItemsData';
+import { viewOrderTotal, viewOrderItems, deleteOrderItems } from '../helpers/data/mergedata';
+import { createOrderitem, updateMenuItem } from '../helpers/data/orderItemsData';
 import paymentForm from '../components/forms/paymentForm';
 // import { createOrderitem, getOrderDetails } from '../helpers/data/orderItemsData';
 // import showOrderDetails from '../components/showOrderDetails';
@@ -94,7 +94,6 @@ const domEvents = () => {
     // VIEW ORDERS
     if (e.target.id.includes('details-btn')) {
       const [, firebaseKey] = e.target.id.split('--');
-      console.warn('dom', firebaseKey);
       viewOrderItems(firebaseKey).then(showOrderItems);
     }
     // DELETE MENU ITEMS
@@ -102,7 +101,8 @@ const domEvents = () => {
       // eslint-disable-next-line no-alert
       if (window.confirm('Are you sure you want to delete this item?')) {
         const [, firebaseKey] = e.target.id.split('--');
-        deleteOrderMenuItem(firebaseKey).then(showOrders);
+        console.warn(firebaseKey);
+        deleteOrderItems(firebaseKey).then(viewOrderItems);
       }
     }
     // EDIT ORDER
