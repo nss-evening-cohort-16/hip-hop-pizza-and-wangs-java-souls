@@ -1,9 +1,9 @@
-# Hip Hop Pizza and Wangs - Java Souls  [![Netlify Status](https://api.netlify.com/api/v1/badges/4ab7e730-7ed3-4cfd-a988-66195e79a991/deploy-status)](https://app.netlify.com/sites/drt-sortinghat/deploys)
+# Hip Hop Pizza and Wangs - Java Souls [![Netlify Status](https://api.netlify.com/api/v1/badges/23892ce3-272f-4649-8a4f-330445cd8820/deploy-status)](https://app.netlify.com/sites/amazing-wright-8eac2c/deploys)
 <!-- update the netlify badge above with your own badge that you can find at netlify under settings/general#status-badges -->
 
 This app is for a Ma and Pa restaurant named Hip, Hop, Pizza, and Wangs. Their concept is a crossroads of music and food and since the 2020 pandemic they needed to change their business model to accommodate and influx of call in and online orders. That’s where this app comes in! It is a point of sale application that will help keep track of their orders. 
 
-[View App](#your-link)
+[View App](https://amazing-wright-8eac2c.netlify.app/)
 
 ## Get Started 
 ````
@@ -30,7 +30,7 @@ $ cd hip-hop-pizza-and-wangs-java-souls
 https://www.loom.com/share/89b74f2dd74d4ffb92edd1548e315016
 
 ## Relevant Links <!-- Link to all the things that are required outside of the ones that have their own section -->
-- [Check out the deployed site](#your-link)
+- [Check out the deployed site](https://amazing-wright-8eac2c.netlify.app/)
 - [Wireframes](https://www.figma.com/file/4y3EZddALuBR3ouSEM57Np/MVP)
 - [Project Board](https://github.com/nss-evening-cohort-16/hip-hop-pizza-and-wangs-java-souls/projects/1)
 

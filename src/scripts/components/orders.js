@@ -16,6 +16,8 @@ const showOrders = (array) => {
                 <li class="list-group-item">${item.customerPhoneNumber}</li>
                 <li class="list-group-item">${item.customerEmail}</li>
                 <li class="list-group-item">${item.orderType}</li>
+                <li class="list-group-item">OrderTotal: $${item.orderTotal}</li>
+                <li class="list-group-item">Tip: $${item.tipTotal}</li>
               </ul>
               <div class="card-body">
                 <button type="button" id="details-btn--${item.firebaseKey}" class="btn btn-outline-success">Details</button>
@@ -38,6 +40,8 @@ const showOrders = (array) => {
               <li class="list-group-item">${item.customerPhoneNumber}</li>
               <li class="list-group-item">${item.customerEmail}</li>
               <li class="list-group-item">${item.orderType}</li>
+              <li class="list-group-item">OrderTotal: $${item.orderTotal}</li>
+              <li class="list-group-item">Tip: $${item.tipTotal}</li>
             </ul>
             <div class="card-body">
               <button type="button" id="details-btn--${item.firebaseKey}" class="btn btn-outline-success">Details</button>
