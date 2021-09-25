@@ -141,10 +141,14 @@ const domEvents = (user) => {
       e.preventDefault();
       const [, firebaseKey] = e.target.id.split('--');
       const orderObject = {
+        customerEmail: document.querySelector('#custemail').value,
+        customerName: document.querySelector('#orderName').value,
+        customerPhoneNumber: document.querySelector('#phone').value,
+        orderType: document.querySelector('#orderType').value,
+        firebaseKey,
         orderStatus: false,
-        firebaseKey
       };
-      editOrder(orderObject).then(showOrders);
+      editOrder(orderObject);
     }
   });
 };
