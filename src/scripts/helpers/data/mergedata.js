@@ -1,4 +1,4 @@
-import { getSingleOrdeMenuItems } from './orderItemsData';
+import {getOrderDetails, deleteOrderMenuItem, getSingleOrdeMenuItems } from './orderItemsData';
 import {
   getMenuItemsArray,
   getSingleMenuItem
@@ -38,32 +38,14 @@ const viewOrderItems = (orderFirebaseKey) => new Promise((resolve, reject) => {
     });
   }).catch(reject);
 });
-// const viewOrderItems = (orderFirebaseKey) => new Promise((resolve, reject) => {
-//   getSingleOrdeMenuItems(orderFirebaseKey).then((mitems) => {
-//     const menuItemArrays = mitems.map((menuItem) => getSingleMenuItem(menuItem.menuItemID));
-//     console.warn(menuItemArrays);
-//     Promise.all([...menuItemArrays]).then((array) => {
-//       resolve( array ]);
-//     });
-//   }).catch(reject);
-// });
 
-// const viewOrderItems_old = (orderFirebaseKey) => new Promise((resolve, reject) => {
-//   getSingleOrdeMenuItems(orderFirebaseKey).then((mitems) => {
-//     const menuItemArray = mitems.map((menuItem) => getSingleMenuItem(menuItem.menuItemID));
-//     console.warn(menuItemArray);
-//     Promise.all([...menuItemArray]).then(resolve);
-//   }).catch(reject);
-// });
-
-// const viewOrderItems = (orderFirebaseKey) => new Promise((resolve, reject) => {
-//   getSingleOrder(orderFirebaseKey)
-//     .then((orderObj) => {
-//       getMenuItemsForOrder(orderObj.firebaseKey)
-//         .then((menuItemObj) => {
-//           resolve({ menuItemObj, ...orderObj });
-//         });
-//     }).catch(reject);
-// });
-
-export { viewOrderMenuItems, viewOrderTotal, viewOrderItems };
+const deleteItemOfOrder = (orderFirebaseKey) => new Promise((resolve, reject) => {
+  getSingleOrdeMenuItems(orderFirebaseKey).then((orderMenuArray) => {
+    const menuItemArray = orderMenuArray.map((menuItem) => getSingleMenuItem(menuItem.menuItemID));
+    if (orderMenuArray.menuItemID === firebaseKey) {
+      deleteOrderMenuItem(firebaseKey);
+    }
+    resolve();
+  });
+});
+export { viewOrderMenuItems, viewOrderTotal, viewOrderItems, deleteItemOfOrder };
