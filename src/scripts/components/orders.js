@@ -4,7 +4,7 @@ const showOrders = (array) => {
   clearDom();
 
   array.forEach((item) => {
-        if (item.orderStatus === true) {
+    if (item.orderStatus === true) {
       document.querySelector('#shop').innerHTML += `
         <div class="card outside-card">
           <div class="card middle-card">

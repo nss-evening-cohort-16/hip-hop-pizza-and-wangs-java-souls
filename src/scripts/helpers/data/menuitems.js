@@ -49,17 +49,9 @@ const getMenuItemsArray = (MenuItemsArray) => {
   console.warn('menuitemsflat', menuitemsflat);
 };
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-export { getOrderTotal, getMenuItemsArray, getMenuItemsForOrder };
-=======
-export { getOrderTotal, getMenuItemsArray, getSingleMenuItem };
->>>>>>> rk-total
-=======
 export {
   getOrderTotal,
   getMenuItemsArray,
   getSingleMenuItem,
   getMenuItemsForOrder
 };
->>>>>>> c1cdf195658caa3c588f38cf7992392c9b6b397a
