@@ -5,7 +5,7 @@ import {
   deleteOrder,
   updateOrder,
   getSingleOrder,
-  editOrder
+  editOrder,
 } from '../helpers/data/ordersData';
 import { viewOrderTotal, viewOrderItems } from '../helpers/data/mergedata';
 import { createOrderitem, updateMenuItem, deleteMenuItem } from '../helpers/data/orderItemsData';
@@ -42,7 +42,6 @@ const domEvents = (user) => {
         timeStamp: new Date(),
         tipTotal: 0
       };
-
       createOrder(orderObject);
     }
 
@@ -136,6 +135,16 @@ const domEvents = (user) => {
       };
       updateMenuItem(menuItemObject);
       getOrders().then(showOrders);
+    }
+    // CLOSE ORDER
+    if (e.target.id.includes('close-order')) {
+      e.preventDefault();
+      const [, firebaseKey] = e.target.id.split('--');
+      const orderObject = {
+        orderStatus: false,
+        firebaseKey
+      };
+      editOrder(orderObject).then(showOrders);
     }
   });
 };

@@ -3,6 +3,8 @@ import clearDom from '../../helpers/auth/clearDom';
 const addUpdateForm = (obj = {}) => {
   clearDom();
   document.querySelector('#form-container').innerHTML = `
+  <div class="card outside-card">
+  <div class="card middle-card">
   <div class="card order-card">
     <form id="submit-menu-form" class="mb-4">
     <div class="form-group">
@@ -27,10 +29,12 @@ const addUpdateForm = (obj = {}) => {
     </div>
     <div class="btn-div form-group">
       <button type="submit" 
-        id="${obj.firebaseKey ? `update-order--${obj.firebaseKey}` : 'submit-order'}" class="btn btn-outline-primary">Create Order
+        id="${obj.firebaseKey ? `update-order--${obj.firebaseKey}` : 'submit-order'}" class="btn btn-outline-success">Submit Change
       </button>
     </div>
     </form>
+    </div>
+    </div>
   </div>`;
 };
 export default addUpdateForm;
