@@ -61,11 +61,12 @@ const deleteOrder = (orderFirebaseKey) => new Promise((resolve, reject) => {
     Promise.all([...deleteItems]).then(() => resolve(deleteSingleOrder(orderFirebaseKey)));
   }).catch(reject);
 });
+
 export {
   getOrders,
   createOrder,
   getSingleOrder,
   deleteOrder,
   updateOrder,
-  editOrder,
+  editOrder
 };
