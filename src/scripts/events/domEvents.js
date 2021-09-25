@@ -8,7 +8,11 @@ import {
   editOrder,
 } from '../helpers/data/ordersData';
 import { viewOrderTotal, viewOrderItems } from '../helpers/data/mergedata';
-import { createOrderitem, updateMenuItem, deleteMenuItem } from '../helpers/data/orderItemsData';
+import {
+  createOrderitem,
+  updateMenuItem,
+  deleteOrderMenuItem
+} from '../helpers/data/orderItemsData';
 import paymentForm from '../components/forms/paymentForm';
 import addOrderForm from '../components/forms/orderForm';
 import viewRevenuePage from '../components/revenue';
@@ -16,9 +20,9 @@ import showOrderItems from '../components/showOrderItems';
 import addUpdateForm from '../components/forms/updateForm';
 import { getSingleMenuItem } from '../helpers/data/menuitems';
 import addUpdateMenuItemForm from '../components/forms/updateMenuItemForm';
-import showHSbuttons from '../components/homeScreenButtonsCard';
+// import showHSbuttons from '../components/homeScreenButtonsCard';
 
-const domEvents = (user) => {
+const domEvents = () => {
   document.querySelector('#main-container').addEventListener('click', (e) => {
     if (e.target.id.includes('viewOrders')) {
       getOrders().then((orderCards) => showOrders(orderCards));
@@ -65,6 +69,7 @@ const domEvents = (user) => {
     if (e.target.id.includes('finish')) {
       e.preventDefault();
       const [ordernumber, paymentMethod] = document.querySelector('#transmethod').value.split('--');
+      console.warn(ordernumber, 'ordernumber');
       viewOrderTotal(ordernumber).then((orderTotal) => {
         const orderObject = {
           ordernumber,
@@ -72,10 +77,9 @@ const domEvents = (user) => {
           paymentMethod,
           orderTotal
         };
-        updateOrder(orderObject);
-        getOrders().then((orderCards) => showOrders(orderCards));
+        updateOrder(orderObject).then(getOrders).then(showOrders);
       });
-      showHSbuttons(user);
+      // showHSbuttons(user);
     }
 
     // Delete Orders
@@ -97,7 +101,10 @@ const domEvents = (user) => {
       // eslint-disable-next-line no-alert
       if (window.confirm('Are you sure you want to delete this item?')) {
         const [, firebaseKey] = e.target.id.split('--');
-        deleteMenuItem(firebaseKey);
+        const [, orderId] = e.target.id.split('---');
+        console.warn(orderId);
+        deleteOrderMenuItem(firebaseKey, orderId).then(showOrderItems);
+        // deleteMenuItem(firebaseKey);
       }
     }
     // EDIT ORDER

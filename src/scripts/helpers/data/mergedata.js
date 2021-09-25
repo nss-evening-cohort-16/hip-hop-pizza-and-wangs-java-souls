@@ -26,9 +26,9 @@ const viewOrderTotal = (orderFirebaseKey) => new Promise((resolve, reject) => {
 const viewOrderItems = (orderFirebaseKey) => new Promise((resolve, reject) => {
   getSingleOrdeMenuItems(orderFirebaseKey).then((mitems) => {
     const menuItemArray = mitems.map((menuItem) => getSingleMenuItem(menuItem.menuItemID));
-    console.warn(menuItemArray);
+    const orderMenuItemArray = mitems.map((omitems) => omitems);
     Promise.all([...menuItemArray]).then((orderArray) => {
-      resolve([...orderArray]);
+      resolve({ orderArray, orderMenuItemArray });
     });
   }).catch(reject);
 });
