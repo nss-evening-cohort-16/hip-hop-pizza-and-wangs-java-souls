@@ -20,7 +20,6 @@ import showOrderItems from '../components/showOrderItems';
 import addUpdateForm from '../components/forms/updateForm';
 import { getSingleMenuItem } from '../helpers/data/menuitems';
 import addUpdateMenuItemForm from '../components/forms/updateMenuItemForm';
-// import showHSbuttons from '../components/homeScreenButtonsCard';
 
 const domEvents = () => {
   document.querySelector('#main-container').addEventListener('click', (e) => {
@@ -93,7 +92,6 @@ const domEvents = () => {
     // VIEW ORDERS
     if (e.target.id.includes('details-btn')) {
       const [, firebaseKey] = e.target.id.split('--');
-      console.warn('dom', firebaseKey);
       viewOrderItems(firebaseKey).then(showOrderItems);
     }
     // DELETE MENU ITEMS
@@ -125,7 +123,7 @@ const domEvents = () => {
       };
       editOrder(orderObject).then(showOrders);
     }
-    // EVENT FOR  EDIT MENU ITEM
+    // EVENT FOR EDIT MENU ITEM
     if (e.target.id.includes('edit-MenuItem')) {
       e.preventDefault();
       const [, firebasekey] = e.target.id.split('--');
@@ -140,8 +138,7 @@ const domEvents = () => {
         itemPrice: document.querySelector('#itemPrice').value,
         firebaseKey,
       };
-      updateMenuItem(menuItemObject);
-      getOrders().then(showOrders);
+      updateMenuItem(menuItemObject).then(showOrders);
     }
     // CLOSE ORDER
     if (e.target.id.includes('close-order')) {

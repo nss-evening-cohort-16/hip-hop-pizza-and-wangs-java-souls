@@ -7,6 +7,17 @@ const showOrderItems = (array) => {
   <div id="menuItemView">
   </div>`;
 
+  const buttons = () => {
+    array.orderMenuItemArray.forEach((elm) => {
+      console.warn(elm.orderID, 'show id');
+      document.querySelector('#menuItemView').innerHTML += `
+          <div id="orderId"class=" card del-btn-card card-body btn-div">
+                      <button type="button" id="delete-menuItem--${elm.firebaseKey}---${elm.orderID}" class="btn btn-outline-danger">Delete Item</button>              
+                    </div>
+          `;
+    });
+  };
+
   array.orderArray.forEach((item) => {
     document.querySelector('#menuItemView').innerHTML += `
       <div class="card outside-card">
@@ -20,8 +31,8 @@ const showOrderItems = (array) => {
             </ul>
             <div id="orderId"class="card-body btn-div">
             <button type="button" id="edit-MenuItem--${item.firebaseKey}" class="btn btn-outline-warning">Edit Item</button>
-          </div>
-            </div>
+          </div>${buttons()}
+            </div> 
           </div>
         </div>
       </div>`;
@@ -29,7 +40,7 @@ const showOrderItems = (array) => {
   array.orderMenuItemArray.forEach((elm) => {
     console.warn(elm.orderID, 'show id');
     document.querySelector('#menuItemView').innerHTML += `
-        <div id="orderId"class="card-body btn-div">
+        <div id="orderId"class=" card del-btn-card card-body btn-div">
                     <button type="button" id="delete-menuItem--${elm.firebaseKey}---${elm.orderID}" class="btn btn-outline-danger">Delete Item</button>              
                   </div>
         `;

@@ -55,6 +55,7 @@ const deleteSingleOrder = (firebaseKey) => new Promise((resolve, reject) => {
     })
     .catch(reject);
 });
+// DELETE ORDER
 const deleteOrder = (orderFirebaseKey) => new Promise((resolve, reject) => {
   getSingleOrdeMenuItems(orderFirebaseKey).then((mitems) => {
     const deleteItems = mitems.map((orderMenuItems) => deleteOrderItems(orderMenuItems.firebaseKey));

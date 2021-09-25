@@ -8,7 +8,7 @@ const startApp = (user) => {
   domBuilder();
   navBar();
   showHSbuttons(user);
-  domEvents(user);
+  domEvents();
   navigationEvents(user);
 };
 export default startApp;

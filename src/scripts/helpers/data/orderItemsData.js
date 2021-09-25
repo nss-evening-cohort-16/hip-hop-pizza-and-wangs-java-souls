@@ -1,7 +1,6 @@
 // API CALLS FOR AUTHORS
 import axios from 'axios';
 import firebaseConfig from '../../../api/apiKeys';
-// import { getOrders } from './ordersData';
 
 // API CALLS FOR BOOKS
 
@@ -13,8 +12,8 @@ const getMenuItems = () => new Promise((resolve, reject) => {
     .catch((error) => reject(error));
 });
 
-const getOrderDetails = (firebaseKey) => new Promise((resolve, reject) => {
-  axios.get(`${dbUrl}/orderMenuItems/${firebaseKey}.json`)
+const getOrderDetails = (orderID) => new Promise((resolve, reject) => {
+  axios.get(`${dbUrl}/orderMenuItems/${orderID}.json`)
     .then((response) => resolve(Object.values(response.data)))
     .catch((error) => reject(error));
 });
@@ -25,14 +24,13 @@ const createOrderitem = (orderObject) => new Promise((resolve, reject) => {
       const body = { firebaseKey: response.data.name };
       axios.patch(`${dbUrl}/orderMenuItems/${response.data.name}.json`, body)
         .then(() => {
-          console.warn('create order form');
         });
     }).catch((error) => reject(error));
 });
 
 // delete menu items
 const deleteMenuItem = (firebaseKey) => new Promise((resolve, reject) => {
-  axios.delete(`${dbUrl}/menuItem/${firebaseKey}.json`)
+  axios.delete(`${dbUrl}/orderMenuItems/${firebaseKey}.json`)
     .then(() => {
       getMenuItems().then(resolve);
     })
