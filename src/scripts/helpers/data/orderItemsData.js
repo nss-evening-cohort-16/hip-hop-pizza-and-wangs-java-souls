@@ -50,6 +50,13 @@ const updateMenuItem = (menuItemObject) => new Promise((resolve, reject) => {
     .then(() => getMenuItems(menuItemObject).then(resolve))
     .catch(reject);
 });
+const deleteOrderMenuItem = (firebaseKey) => new Promise((resolve, reject) => {
+  axios.delete(`${dbUrl}/orderMenuItem/${firebaseKey}.json`)
+    .then(() => {
+      getOrderDetails().then(resolve);
+    })
+    .catch(reject);
+});
 
 export {
   getMenuItems,
@@ -57,5 +64,6 @@ export {
   getOrderDetails,
   getSingleOrdeMenuItems,
   deleteMenuItem,
-  updateMenuItem
+  updateMenuItem,
+  deleteOrderMenuItem
 };

@@ -26,19 +26,21 @@ $ cd hip-hop-pizza-and-wangs-java-souls
     - Total of different order types (phone, walk in, and online)
     - Total of payment types (credit, cash, gift cards)
 
-## Video Walkthrough of APP NAME <!-- A loom link is sufficient -->
-https://www.loom.com/share/829b90d831ea441ba2db6bea724af210
+## Video Walkthrough of Hip Hop Pizza and Wangs -JavaSouls <!-- A loom link is sufficient -->
+https://www.loom.com/share/89b74f2dd74d4ffb92edd1548e315016
 
 ## Relevant Links <!-- Link to all the things that are required outside of the ones that have their own section -->
 - [Check out the deployed site](#your-link)
 - [Wireframes](https://www.figma.com/file/4y3EZddALuBR3ouSEM57Np/MVP)
 - [Project Board](https://github.com/nss-evening-cohort-16/hip-hop-pizza-and-wangs-java-souls/projects/1)
 
-## Code Snippet <!-- OPTIONAL, but doesn't hurt -->
-PLACE CODE SNIPPET HERE
+<!-- ## Code Snippet <!-- OPTIONAL, but doesn't hurt -->
+<!-- PLACE CODE SNIPPET HERE --> 
 
 ## Project Screenshots <!-- These can be inside of your project. Look at the repos from class and see how the images are included in the readme -->
 <img width="1000" alt="Login Screen" src="https://user-images.githubusercontent.com/78558344/134584913-60f78f33-3a59-4672-ba13-dbefa2aa13dd.png">
+<img width="1000" alt="Create Form" src="https://user-images.githubusercontent.com/78558344/134772446-68a9bcda-fb08-4190-9850-0ca50ad16bc7.png">
+<img width="1000" alt="view orders" src="https://user-images.githubusercontent.com/78558344/134772472-b3a5dbff-bd30-4f0e-a8f5-9ffb0cf2064e.png">
 
 ## Contributors
 - [Derek Baylor](https://github.com/DerekBaylor)
