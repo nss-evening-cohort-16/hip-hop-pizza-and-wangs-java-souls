@@ -51,7 +51,6 @@ const updateMenuItem = (menuItemObject) => new Promise((resolve, reject) => {
     .catch(reject);
 });
 const deleteOrderMenuItem = (firebaseKey, orderId) => new Promise((resolve, reject) => {
-  console.warn('DATA', firebaseKey);
   axios.delete(`${dbUrl}/orderMenuItems/${firebaseKey}.json`)
     .then(() => {
       getSingleOrdeMenuItems(orderId).then(resolve);
