@@ -29,7 +29,7 @@ const showOrderItems = (array) => {
   array.orderMenuItemArray.forEach((elm) => {
     console.warn(elm.orderID, 'show id');
     document.querySelector('#menuItemView').innerHTML += `
-        <div id="orderId"class="card-body btn-div">
+        <div id="orderId"class=" card del-btn-card card-body btn-div">
                     <button type="button" id="delete-menuItem--${elm.firebaseKey}---${elm.orderID}" class="btn btn-outline-danger">Delete Item</button>              
                   </div>
         `;
