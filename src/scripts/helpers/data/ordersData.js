@@ -1,6 +1,7 @@
 import axios from 'axios';
 import firebaseConfig from '../../../api/apiKeys';
 import orderItemForm from '../../components/forms/orderItemForm';
+import { getSingleOrdeMenuItems } from './orderItemsData';
 
 const dbUrl = firebaseConfig.databaseURL;
 // get orders
@@ -38,13 +39,27 @@ const updateOrder = (orderObject) => {
   });
 };
 
+// DELETE ordermenuitem
+const deleteOrderItems = (orderID) => new Promise((resolve, reject) => {
+  axios.delete(`${dbUrl}/orderMenuItems/${orderID}.json`)
+    .then(() => {
+      getOrders().then(resolve);
+    })
+    .catch(reject);
+});
 // DELETE
-const deleteOrder = (firebaseKey) => new Promise((resolve, reject) => {
+const deleteSingleOrder = (firebaseKey) => new Promise((resolve, reject) => {
   axios.delete(`${dbUrl}/orders/${firebaseKey}.json`)
     .then(() => {
       getOrders().then(resolve);
     })
     .catch(reject);
+});
+const deleteOrder = (orderFirebaseKey) => new Promise((resolve, reject) => {
+  getSingleOrdeMenuItems(orderFirebaseKey).then((mitems) => {
+    const deleteItems = mitems.map((orderMenuItems) => deleteOrderItems(orderMenuItems.firebaseKey));
+    Promise.all([...deleteItems]).then(() => resolve(deleteSingleOrder(orderFirebaseKey)));
+  }).catch(reject);
 });
 
 export {

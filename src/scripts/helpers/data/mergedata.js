@@ -31,9 +31,11 @@ const viewOrderTotal = (orderFirebaseKey) => new Promise((resolve, reject) => {
 
 const viewOrderItems = (orderFirebaseKey) => new Promise((resolve, reject) => {
   getSingleOrdeMenuItems(orderFirebaseKey).then((mitems) => {
+    const mitemkeys = mitems.map((menuItem) => getSingleMenuItem(menuItem.firebaseKey));
     const menuItemArray = mitems.map((menuItem) => getSingleMenuItem(menuItem.menuItemID));
     console.warn(menuItemArray);
     Promise.all([...menuItemArray]).then((orderArray) => {
+      console.warn('array merge', { mitemkeys, ...orderArray });
       resolve([...orderArray]);
     });
   }).catch(reject);

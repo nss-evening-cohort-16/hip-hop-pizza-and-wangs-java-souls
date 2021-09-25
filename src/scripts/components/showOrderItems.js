@@ -12,10 +12,10 @@ const showOrderItems = (orderArray) => {
     document.querySelector('#menuItemView').innerHTML += `
     <div class="card" style="width: 18rem;">
       <div class="card-body">
-       <h5 class="card-title">${item.menuItem}
+       <h5 class="card-title">${item.menuItem} 
       </div>
     <ul class="list-group list-group-flush">
-      <li class="list-group-item">${item.itemPrice}</li>
+      <li class="list-group-item">$${item.itemPrice}</li>
       </ul>
         <div class="card-body">
           <button type="button" id="edit-btn" class="btn btn-outline-info">Edit</button>

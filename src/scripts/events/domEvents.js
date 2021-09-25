@@ -83,6 +83,7 @@ const domEvents = () => {
       // eslint-disable-next-line no-alert
       if (window.confirm('Want to delete?')) {
         const [, id] = e.target.id.split('--');
+        console.warn(id);
         deleteOrder(id).then(showOrders);
       }
     }
@@ -95,6 +96,7 @@ const domEvents = () => {
     // DELETE MENU ITEMS
     if (e.target.id.includes('delete-menuItem')) {
       const [, firebaseKey] = e.target.id.split('--');
+      console.warn('e.target.id', e.target.id);
       viewOrderItems(firebaseKey).then(showOrderItems);
     }
   });
