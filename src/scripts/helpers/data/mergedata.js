@@ -1,16 +1,9 @@
 import { getSingleOrdeMenuItems } from './orderItemsData';
 import {
   getMenuItemsArray,
-<<<<<<< HEAD
-  // getMenuItemsForOrder,
-  getSingleMenuItem
-} from './menuitems';
-// import { getSingleOrder } from './ordersData';
-=======
   getSingleMenuItem
 } from './menuitems';
 
->>>>>>> c1cdf195658caa3c588f38cf7992392c9b6b397a
 // API CALLS FOR BOOKS
 
 const viewOrderMenuItems = (orderFirebaseKey) => new Promise(() => {

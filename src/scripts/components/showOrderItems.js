@@ -8,10 +8,6 @@ const showOrderItems = (orderArray) => {
   console.warn(orderArray);
 
   orderArray.forEach((item) => {
-<<<<<<< HEAD
-    // console.warn();
-=======
->>>>>>> c1cdf195658caa3c588f38cf7992392c9b6b397a
     document.querySelector('#menuItemView').innerHTML += `
       <div class="card outside-card">
         <div class="card middle-card">
