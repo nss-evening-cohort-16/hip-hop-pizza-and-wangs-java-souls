@@ -141,8 +141,8 @@ const domEvents = (user) => {
       e.preventDefault();
       const [, firebaseKey] = e.target.id.split('--');
       const orderObject = {
+        firebaseKey,
         orderStatus: false,
-        firebaseKey
       };
       editOrder(orderObject).then(showOrders);
     }

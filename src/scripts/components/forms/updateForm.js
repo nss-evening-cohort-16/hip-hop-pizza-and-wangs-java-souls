@@ -29,7 +29,7 @@ const addUpdateForm = (obj = {}) => {
     </div>
     <div class="btn-div form-group">
       <button type="submit" 
-        id="${obj.firebaseKey ? `update-order--${obj.firebaseKey}` : 'submit-order'}" class="btn btn-outline-success">Submit Change
+      id="submitEdit-order--${obj.firebaseKey}" class="btn btn-outline-success">Submit Change
       </button>
     </div>
     </form>
