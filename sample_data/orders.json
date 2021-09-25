@@ -1,98 +1,98 @@
 {
-  "-MjX7plHF4zfL0Viz6-E" : {
-    "customerEmail" : "sdaoust1@pinterest.com",
-    "customerName" : "Sarina Daoust",
-    "customerPhoneNumber" : "6203473872",
-    "firebaseKey" : "-MjX7plHF4zfL0Viz6-E",
+  "-MkKoPI019Sq1ckQHboL" : {
+    "customerEmail" : "monday@week.com",
+    "customerName" : "R Kaur",
+    "customerPhoneNumber" : "2349872345",
+    "firebaseKey" : "-MkKoPI019Sq1ckQHboL",
     "orderStatus" : false,
-    "orderTotal" : 50.66,
-    "orderType" : "phone",
-    "paymentMethod" : "",
-    "timeStamp" : "2021-02-16 06:20:21",
-    "tipTotal" : 9.55
+    "orderTotal" : 43,
+    "orderType" : "Phone",
+    "paymentMethod" : "CreditCard",
+    "timeStamp" : "2021-09-24T03:20:30.464Z",
+    "tipTotal" : "10"
   },
-  "-MjX7yZmfaDN0qQyJe-4" : {
-    "customerEmail" : "afilippazzo2@over-blog.com",
-    "customerName" : "Alma Filippazzo",
-    "customerPhoneNumber" : "3985436755",
-    "firebaseKey" : "-MjX7yZmfaDN0qQyJe-4",
+  "-MkKoaaC3dvUD3IiLQwX" : {
+    "customerEmail" : "Tuesday@week.com",
+    "customerName" : "Klay",
+    "customerPhoneNumber" : "6152395676",
+    "firebaseKey" : "-MkKoaaC3dvUD3IiLQwX",
     "orderStatus" : false,
-    "orderTotal" : 46.16,
-    "orderType" : "phone",
-    "paymentMethod" : "",
-    "timeStamp" : "2021-07-26 13:39:34",
-    "tipTotal" : 23.40
+    "orderTotal" : 55,
+    "orderType" : "Phone",
+    "paymentMethod" : "GiftCard",
+    "timeStamp" : "2021-09-24T03:21:21.091Z",
+    "tipTotal" : "20"
   },
-  "-MjX838zRCKaW0EvEtID" : {
-    "customerEmail" : "vanstead3@tuttocitta.it",
-    "customerName" : "Valene Anstead",
-    "customerPhoneNumber" : "2414145229",
-    "firebaseKey" : "-MjX838zRCKaW0EvEtID",
+  "-MkKp4IpvF5hYSnHfwlW" : {
+    "customerEmail" : "Friday@week.com",
+    "customerName" : "Derek",
+    "customerPhoneNumber" : "6157863426",
+    "firebaseKey" : "-MkKp4IpvF5hYSnHfwlW",
     "orderStatus" : false,
-    "orderTotal" : 15.94,
-    "orderType" : "in Person",
-    "paymentMethod" : "",
-    "timeStamp" : "2021-06-28 16:27:02",
-    "tipTotal" : 7.52
+    "orderTotal" : 70,
+    "orderType" : "On-line",
+    "paymentMethod" : "cash",
+    "timeStamp" : "2021-09-24T03:23:26.878Z",
+    "tipTotal" : "14"
   },
-  "-MjX8A7b7X2H-T10WAiI" : {
-    "customerEmail" : "csouthcomb4@ca.gov",
-    "customerName" : "Cherey Southcomb",
-    "customerPhoneNumber" : "6918685848",
-    "firebaseKey" : "-MjX8A7b7X2H-T10WAiI",
+  "-MkKqjOrkR5ln4KrYYYH" : {
+    "customerEmail" : "test12@test.com",
+    "customerName" : "tetdada",
+    "customerPhoneNumber" : "2346549786",
+    "firebaseKey" : "-MkKqjOrkR5ln4KrYYYH",
     "orderStatus" : false,
-    "orderTotal" : 21.13,
-    "orderType" : "phone",
+    "orderTotal" : 0,
+    "orderType" : "Phone",
     "paymentMethod" : "",
-    "timeStamp" : "2020-12-10 06:36:42",
-    "tipTotal" : 7.91
+    "timeStamp" : "2021-09-24T03:30:41.283Z",
+    "tipTotal" : 0
   },
-  "-MjX8E5AgtJFWLjN3qjR" : {
-    "customerEmail" : "bqueen5@123-reg.co.uk",
-    "customerName" : "Benny Queen",
-    "customerPhoneNumber" : "1849116678",
-    "firebaseKey" : "-MjX8E5AgtJFWLjN3qjR",
+  "-MkKrKY3HtLA6HVr96Sn" : {
+    "customerEmail" : "Wednesday@week.com",
+    "customerName" : "tet",
+    "customerPhoneNumber" : "2323",
+    "firebaseKey" : "-MkKrKY3HtLA6HVr96Sn",
     "orderStatus" : false,
-    "orderTotal" : 19.88,
-    "orderType" : "in Person",
+    "orderTotal" : 0,
+    "orderType" : "Phone",
     "paymentMethod" : "",
-    "timeStamp" : "2020-11-10 08:54:59",
-    "tipTotal" : 37.70
+    "timeStamp" : "2021-09-24T03:33:17.546Z",
+    "tipTotal" : 0
   },
-  "-MjX8Hn--yv95IbA15gN" : {
-    "customerEmail" : "mclaye6@timesonline.co.uk",
-    "customerName" : "Morris Claye",
-    "customerPhoneNumber" : "4157987043",
-    "firebaseKey" : "-MjX8Hn--yv95IbA15gN",
+  "-MkKtdQTYOWavceWNs6E" : {
+    "customerEmail" : "sam@today.com",
+    "customerName" : "Sam",
+    "customerPhoneNumber" : "3458764565",
+    "firebaseKey" : "-MkKtdQTYOWavceWNs6E",
     "orderStatus" : true,
-    "orderTotal" : 72.92,
-    "orderType" : "in Person",
-    "paymentMethod" : "",
-    "timeStamp" : "2021-07-19 02:07:45",
-    "tipTotal" : 20.80
+    "orderTotal" : 45,
+    "orderType" : "In-person",
+    "paymentMethod" : "CreditCard",
+    "timeStamp" : "2021-09-24T03:43:23.409Z",
+    "tipTotal" : "23"
   },
-  "-MjX8LHGVFJXJhYT1YlX" : {
-    "customerEmail" : "aluckes7@dailymotion.com",
-    "customerName" : "Antonius Luckes",
-    "customerPhoneNumber" : "7456521274",
-    "firebaseKey" : "-MjX8LHGVFJXJhYT1YlX",
-    "orderStatus" : false,
-    "orderTotal" : 99.46,
-    "orderType" : "in Person",
-    "paymentMethod" : "",
-    "timeStamp" : "2021-08-02 01:12:22",
-    "tipTotal" : 85.77
-  },
-  "-MjX8Sd7EKeeQ1sWFHEe" : {
-    "customerEmail" : "rshulver8@prnewswire.com",
-    "customerName" : "Renell Shulver",
-    "customerPhoneNumber" : "6505042598",
-    "firebaseKey" : "-MjX8Sd7EKeeQ1sWFHEe",
+  "-MkOwtSGsRpXevIRl9KV" : {
+    "customerEmail" : "grace@grace.com",
+    "customerName" : "Grace",
+    "customerPhoneNumber" : "6154858215",
+    "firebaseKey" : "-MkOwtSGsRpXevIRl9KV",
     "orderStatus" : true,
-    "orderTotal" : 40.49,
-    "orderType" : "in Person",
+    "orderTotal" : 38,
+    "orderType" : "In-person",
+    "paymentMethod" : "cash",
+    "timeStamp" : "2021-09-24T22:36:07.816Z",
+    "tipTotal" : "12"
+  },
+  "-MkPFAqtq5ikL4seyphM" : {
+    "customerEmail" : "test@testmail.com",
+    "customerName" : "test 1",
+    "customerPhoneNumber" : "3214234",
+    "firebaseKey" : "-MkPFAqtq5ikL4seyphM",
+    "orderStatus" : true,
+    "orderTotal" : 0,
+    "orderType" : "Phone",
     "paymentMethod" : "",
-    "timeStamp" : "2021-02-14 10:02:58",
-    "tipTotal" : 4.79
+    "timeStamp" : "2021-09-25T00:00:24.351Z",
+    "tipTotal" : 0
   }
 }

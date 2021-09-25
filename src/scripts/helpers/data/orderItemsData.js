@@ -31,6 +31,17 @@ const createOrderitem = (orderObject) => new Promise((resolve, reject) => {
     }).catch((error) => reject(error));
 });
 
+// const createOrderitem = (orderObject) => new Promise((resolve, reject) => {
+//   axios.post(`${dbUrl}/orderMenuItems.json`, orderObject)
+//     .then((response) => {
+//       const body = { firebaseKey: response.data.name };
+//       axios.patch(`${dbUrl}/orderMenuItems/${response.data.name}.json`, body)
+//         .then(() => resolve(Object.values(response.data)))
+
+//         .catch((error) => reject(error));
+//     });
+// });
+
 // delete menu items
 const deleteMenuItem = (firebaseKey) => new Promise((resolve, reject) => {
   axios.delete(`${dbUrl}/menuItem/${firebaseKey}.json`)

@@ -24,17 +24,21 @@ const createOrder = (orderObject) => new Promise((resolve, reject) => {
       axios.patch(`${dbUrl}/orders/${response.data.name}.json`, body)
         .then(() => {
           getSingleOrder(response.data.name).then(orderItemForm);
-          // result of getSingleOrder is paased to orderItemForm
-          // getOrders().then((orderCards) => resolve(orderCards));
         });
     }).catch((error) => reject(error));
 });
 const updateOrder = (orderObject) => {
   const body = { tipTotal: orderObject.tipTotal, paymentMethod: orderObject.paymentMethod, orderTotal: orderObject.orderTotal };
   axios.patch(`${dbUrl}/orders/${orderObject.ordernumber}.json`, body).then(() => {
-    console.warn('done');
   });
 };
+
+// EDIT ORDER
+const editOrder = (orderObject) => new Promise((resolve, reject) => {
+  axios.patch(`${dbUrl}/orders/${orderObject.firebaseKey}.json`, orderObject)
+    .then(() => getOrders(orderObject).then(resolve))
+    .catch(reject);
+});
 // DELETE ordermenuitem
 const deleteOrderItems = (orderID) => new Promise((resolve, reject) => {
   axios.delete(`${dbUrl}/orderMenuItems/${orderID}.json`)
@@ -62,5 +66,6 @@ export {
   createOrder,
   getSingleOrder,
   deleteOrder,
-  updateOrder
+  updateOrder,
+  editOrder,
 };
