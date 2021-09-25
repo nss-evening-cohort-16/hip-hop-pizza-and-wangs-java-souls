@@ -8,7 +8,11 @@ import {
   editOrder,
 } from '../helpers/data/ordersData';
 import { viewOrderTotal, viewOrderItems } from '../helpers/data/mergedata';
-import { createOrderitem, updateMenuItem, deleteMenuItem } from '../helpers/data/orderItemsData';
+import {
+  createOrderitem,
+  updateMenuItem,
+  deleteOrderMenuItem
+} from '../helpers/data/orderItemsData';
 import paymentForm from '../components/forms/paymentForm';
 import addOrderForm from '../components/forms/orderForm';
 import viewRevenuePage from '../components/revenue';
@@ -97,7 +101,10 @@ const domEvents = () => {
       // eslint-disable-next-line no-alert
       if (window.confirm('Are you sure you want to delete this item?')) {
         const [, firebaseKey] = e.target.id.split('--');
-        deleteMenuItem(firebaseKey);
+        const [, orderId] = e.target.id.split('---');
+        console.warn(orderId);
+        deleteOrderMenuItem(firebaseKey, orderId).then(showOrderItems);
+        // deleteMenuItem(firebaseKey);
       }
     }
     // EDIT ORDER
