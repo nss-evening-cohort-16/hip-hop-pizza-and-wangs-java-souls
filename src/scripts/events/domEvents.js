@@ -16,11 +16,6 @@ import showOrderItems from '../components/showOrderItems';
 import addUpdateForm from '../components/forms/updateForm';
 import { getSingleMenuItem } from '../helpers/data/menuitems';
 import addUpdateMenuItemForm from '../components/forms/updateMenuItemForm';
-<<<<<<< HEAD
-import itemsInCart from '../components/forms/cartItems';
-=======
-// import showHSbuttons from '../components/homeScreenButtonsCard';
->>>>>>> Development
 
 const domEvents = () => {
   document.querySelector('#main-container').addEventListener('click', (e) => {
@@ -58,7 +53,6 @@ const domEvents = () => {
         menuItemID: menuItem
       };
       createOrderitem(orderObject);
-      itemsInCart(menuItem);
     }
 
     if (e.target.id.includes('payment')) {
