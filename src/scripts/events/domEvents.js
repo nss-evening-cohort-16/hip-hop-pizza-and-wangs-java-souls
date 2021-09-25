@@ -69,7 +69,7 @@ const domEvents = () => {
     if (e.target.id.includes('finish')) {
       e.preventDefault();
       const [ordernumber, paymentMethod] = document.querySelector('#transmethod').value.split('--');
-      console.warn(ordernumber, 'ordernumber');
+      console.warn('finish', ordernumber, paymentMethod);
       viewOrderTotal(ordernumber).then((orderTotal) => {
         const orderObject = {
           ordernumber,
@@ -77,9 +77,8 @@ const domEvents = () => {
           paymentMethod,
           orderTotal
         };
-        updateOrder(orderObject).then(getOrders).then(showOrders);
+        updateOrder(orderObject).then(() => getOrders().then((orderCards) => showOrders(orderCards)));
       });
-      // showHSbuttons(user);
     }
 
     // Delete Orders
@@ -87,6 +86,7 @@ const domEvents = () => {
       // eslint-disable-next-line no-alert
       if (window.confirm('Want to delete?')) {
         const [, id] = e.target.id.split('--');
+        console.warn(id);
         deleteOrder(id).then(showOrders);
       }
     }

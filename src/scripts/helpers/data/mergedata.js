@@ -1,9 +1,7 @@
 import { getSingleOrdeMenuItems } from './orderItemsData';
-import {
-  getMenuItemsArray,
-  getSingleMenuItem
-} from './menuitems';
-
+import { getMenuItemsArray, getSingleMenuItem } from './menuitems';
+// import { getOrderTotal, getMenuItemsArray, getMenuItemsForOrder } from './menuitems';
+// import { getSingleOrder } from './ordersData';
 // API CALLS FOR BOOKS
 
 const viewOrderMenuItems = (orderFirebaseKey) => new Promise(() => {
@@ -14,6 +12,7 @@ const viewOrderMenuItems = (orderFirebaseKey) => new Promise(() => {
 });
 
 const viewOrderTotal = (orderFirebaseKey) => new Promise((resolve, reject) => {
+  // let menuitemsflat = 0;
   getSingleOrdeMenuItems(orderFirebaseKey).then((mitems) => {
     const menuItemArray = mitems.map((menuItem) => getSingleMenuItem(menuItem.menuItemID));
     console.warn(menuItemArray);
