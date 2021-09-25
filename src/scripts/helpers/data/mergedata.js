@@ -20,6 +20,7 @@ const viewOrderMenuItems = (orderFirebaseKey) => new Promise(() => {
 // reduce((previousValue, currentValue, currentIndex, array) => { ... }, initialValue)
 
 const viewOrderTotal = (orderFirebaseKey) => new Promise((resolve, reject) => {
+  // let menuitemsflat = 0;
   getSingleOrdeMenuItems(orderFirebaseKey).then((mitems) => {
     const menuItemArray = mitems.map((menuItem) => getSingleMenuItem(menuItem.menuItemID));
     console.warn(menuItemArray);
