@@ -16,7 +16,11 @@ import showOrderItems from '../components/showOrderItems';
 import addUpdateForm from '../components/forms/updateForm';
 import { getSingleMenuItem } from '../helpers/data/menuitems';
 import addUpdateMenuItemForm from '../components/forms/updateMenuItemForm';
+<<<<<<< HEAD
 import itemsInCart from '../components/forms/cartItems';
+=======
+// import showHSbuttons from '../components/homeScreenButtonsCard';
+>>>>>>> Development
 
 const domEvents = () => {
   document.querySelector('#main-container').addEventListener('click', (e) => {
@@ -66,6 +70,7 @@ const domEvents = () => {
     if (e.target.id.includes('finish')) {
       e.preventDefault();
       const [ordernumber, paymentMethod] = document.querySelector('#transmethod').value.split('--');
+      console.warn('finish', ordernumber, paymentMethod);
       viewOrderTotal(ordernumber).then((orderTotal) => {
         const orderObject = {
           ordernumber,
@@ -73,8 +78,7 @@ const domEvents = () => {
           paymentMethod,
           orderTotal
         };
-        updateOrder(orderObject);
-        getOrders().then((orderCards) => showOrders(orderCards));
+        updateOrder(orderObject).then(() => getOrders().then((orderCards) => showOrders(orderCards)));
       });
     }
 
@@ -83,6 +87,7 @@ const domEvents = () => {
       // eslint-disable-next-line no-alert
       if (window.confirm('Want to delete?')) {
         const [, id] = e.target.id.split('--');
+        console.warn(id);
         deleteOrder(id).then(showOrders);
       }
     }

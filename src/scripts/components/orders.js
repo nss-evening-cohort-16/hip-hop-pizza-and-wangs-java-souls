@@ -13,10 +13,16 @@ const showOrders = (array) => {
                 <h5 class="card-title">${item.customerName}
               </div>
               <ul class="list-group list-group-flush">
+<<<<<<< HEAD
                 <li class="list-group-item">Order Status: ${item.orderStatus}</li>
                 <li class="list-group-item">Customer Phone: ${item.customerPhoneNumber}</li>
                 <li class="list-group-item">Customer Email: ${item.customerEmail}</li>
                 <li class="list-group-item">Order Type: ${item.orderType}</li>
+=======
+                <li class="list-group-item">${item.customerPhoneNumber}</li>
+                <li class="list-group-item">${item.customerEmail}</li>
+                <li class="list-group-item">${item.orderType}</li>
+>>>>>>> Development
                 <li class="list-group-item">OrderTotal: $${item.orderTotal}</li>
                 <li class="list-group-item">Tip: $${item.tipTotal}</li>
               </ul>
@@ -38,10 +44,16 @@ const showOrders = (array) => {
               <h5 class="card-title">${item.customerName}
             </div>
             <ul class="list-group list-group-flush">
+<<<<<<< HEAD
               <li class="list-group-item">Order Status: ${item.orderStatus}</li>
               <li class="list-group-item">Customer Phone: ${item.customerPhoneNumber}</li>
               <li class="list-group-item">Customer Email: ${item.customerEmail}</li>
               <li class="list-group-item">Order Type: ${item.orderType}</li>
+=======
+              <li class="list-group-item">${item.customerPhoneNumber}</li>
+              <li class="list-group-item">${item.customerEmail}</li>
+              <li class="list-group-item">${item.orderType}</li>
+>>>>>>> Development
               <li class="list-group-item">OrderTotal: $${item.orderTotal}</li>
               <li class="list-group-item">Tip: $${item.tipTotal}</li>
             </ul>
