@@ -17,6 +17,7 @@ import addUpdateForm from '../components/forms/updateForm';
 import { getSingleMenuItem } from '../helpers/data/menuitems';
 import addUpdateMenuItemForm from '../components/forms/updateMenuItemForm';
 import showHSbuttons from '../components/homeScreenButtonsCard';
+import itemsInCart from '../components/forms/cartItems';
 
 const domEvents = (user) => {
   document.querySelector('#main-container').addEventListener('click', (e) => {
@@ -54,6 +55,7 @@ const domEvents = (user) => {
         menuItemID: menuItem
       };
       createOrderitem(orderObject);
+      itemsInCart(orderObject);
     }
 
     if (e.target.id.includes('payment')) {
@@ -89,16 +91,12 @@ const domEvents = (user) => {
     // VIEW ORDERS
     if (e.target.id.includes('details-btn')) {
       const [, firebaseKey] = e.target.id.split('--');
-      console.warn('dom', firebaseKey);
       viewOrderItems(firebaseKey).then(showOrderItems);
     }
     // DELETE MENU ITEMS
     if (e.target.id.includes('delete-menuItem')) {
-      // eslint-disable-next-line no-alert
-      if (window.confirm('Are you sure you want to delete this item?')) {
-        const [, firebaseKey] = e.target.id.split('--');
-        deleteMenuItem(firebaseKey);
-      }
+      const [, firebaseKey] = e.target.id.split('--');
+      deleteMenuItem(firebaseKey);
     }
     // EDIT ORDER
     if (e.target.id.includes('edit-btn')) {
@@ -141,8 +139,8 @@ const domEvents = (user) => {
       e.preventDefault();
       const [, firebaseKey] = e.target.id.split('--');
       const orderObject = {
-        orderStatus: false,
-        firebaseKey
+        firebaseKey,
+        orderStatus: false
       };
       editOrder(orderObject).then(showOrders);
     }

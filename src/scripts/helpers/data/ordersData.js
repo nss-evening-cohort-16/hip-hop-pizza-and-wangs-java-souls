@@ -57,5 +57,5 @@ export {
   getSingleOrder,
   deleteOrder,
   updateOrder,
-  editOrder,
+  editOrder
 };
