@@ -16,9 +16,9 @@ import showOrderItems from '../components/showOrderItems';
 import addUpdateForm from '../components/forms/updateForm';
 import { getSingleMenuItem } from '../helpers/data/menuitems';
 import addUpdateMenuItemForm from '../components/forms/updateMenuItemForm';
-import showHSbuttons from '../components/homeScreenButtonsCard';
+// import showHSbuttons from '../components/homeScreenButtonsCard';
 
-const domEvents = (user) => {
+const domEvents = () => {
   document.querySelector('#main-container').addEventListener('click', (e) => {
     if (e.target.id.includes('viewOrders')) {
       getOrders().then((orderCards) => showOrders(orderCards));
@@ -73,10 +73,8 @@ const domEvents = (user) => {
           paymentMethod,
           orderTotal
         };
-        updateOrder(orderObject);
-        getOrders().then((orderCards) => showOrders(orderCards));
+        updateOrder(orderObject).then(() => getOrders().then((orderCards) => showOrders(orderCards)));
       });
-      showHSbuttons(user);
     }
 
     // Delete Orders
