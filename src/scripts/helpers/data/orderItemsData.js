@@ -24,6 +24,7 @@ const createOrderitem = (orderObject) => new Promise((resolve, reject) => {
       const body = { firebaseKey: response.data.name };
       axios.patch(`${dbUrl}/orderMenuItems/${response.data.name}.json`, body)
         .then(() => {
+          console.warn('create order form');
         });
     }).catch((error) => reject(error));
 });
@@ -48,10 +49,10 @@ const updateMenuItem = (menuItemObject) => new Promise((resolve, reject) => {
     .then(() => getMenuItems(menuItemObject).then(resolve))
     .catch(reject);
 });
-const deleteOrderMenuItem = (firebaseKey) => new Promise((resolve, reject) => {
-  axios.delete(`${dbUrl}/orderMenuItem/${firebaseKey}.json`)
+const deleteOrderMenuItem = (firebaseKey, orderId) => new Promise((resolve, reject) => {
+  axios.delete(`${dbUrl}/orderMenuItems/${firebaseKey}.json`)
     .then(() => {
-      getOrderDetails().then(resolve);
+      getSingleOrdeMenuItems(orderId).then(resolve);
     })
     .catch(reject);
 });
