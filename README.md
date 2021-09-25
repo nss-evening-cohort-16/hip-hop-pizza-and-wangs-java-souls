@@ -27,7 +27,7 @@ $ cd hip-hop-pizza-and-wangs-java-souls
     - Total of payment types (credit, cash, gift cards)
 
 ## Video Walkthrough of Hip Hop Pizza and Wangs -JavaSouls <!-- A loom link is sufficient -->
-https://www.loom.com/share/829b90d831ea441ba2db6bea724af210
+https://www.loom.com/share/89b74f2dd74d4ffb92edd1548e315016
 
 ## Relevant Links <!-- Link to all the things that are required outside of the ones that have their own section -->
 - [Check out the deployed site](#your-link)
