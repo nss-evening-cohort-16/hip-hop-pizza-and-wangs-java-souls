@@ -1,9 +1,11 @@
-import clearDom from '../auth/clearDom';
+import clearDom from '../helpers/auth/clearDom';
 
 const showHSbuttons = (user) => {
   clearDom();
 
   document.querySelector('#button-container').innerHTML += `
+  <div class="card outside-card">
+    <div class="card middle-card">
       <div class="row card button-card">
           <div class="btn-card-body">
             <h1 id="hs-message">Start Rocking, ${user.displayName}!</h1>
@@ -12,7 +14,9 @@ const showHSbuttons = (user) => {
             <div id="revenue" class="btn btn-lg btn-outline-danger hs-btn view-revenue-btn">View Revenue</div>
           </div>
       </div>
-      `;
+    </div>
+  </div>
+  `;
 };
 
 export default showHSbuttons;

@@ -5,22 +5,20 @@ import {
   deleteOrder,
   updateOrder,
   getSingleOrder,
-  editOrder
+  editOrder,
 } from '../helpers/data/ordersData';
-// import { viewOrderMenuItems } from '../helpers/data/mergeData';
 import { viewOrderTotal, viewOrderItems } from '../helpers/data/mergedata';
 import { createOrderitem, updateMenuItem, deleteMenuItem } from '../helpers/data/orderItemsData';
 import paymentForm from '../components/forms/paymentForm';
-// import { createOrderitem, getOrderDetails } from '../helpers/data/orderItemsData';
-// import showOrderDetails from '../components/showOrderDetails';
 import addOrderForm from '../components/forms/orderForm';
 import viewRevenuePage from '../components/revenue';
 import showOrderItems from '../components/showOrderItems';
 import addUpdateForm from '../components/forms/updateForm';
 import { getSingleMenuItem } from '../helpers/data/menuitems';
 import addUpdateMenuItemForm from '../components/forms/updateMenuItemForm';
+import showHSbuttons from '../components/homeScreenButtonsCard';
 
-const domEvents = () => {
+const domEvents = (user) => {
   document.querySelector('#main-container').addEventListener('click', (e) => {
     if (e.target.id.includes('viewOrders')) {
       getOrders().then((orderCards) => showOrders(orderCards));
@@ -37,28 +35,25 @@ const domEvents = () => {
         customerEmail: document.querySelector('#custemail').value,
         customerName: document.querySelector('#orderName').value,
         customerPhoneNumber: document.querySelector('#phone').value,
-        orderStatus: '',
+        orderStatus: true,
         orderTotal: 0,
         orderType: document.querySelector('#orderType').value,
         paymentMethod: '',
         timeStamp: new Date(),
         tipTotal: 0
       };
-
       createOrder(orderObject);
     }
 
     if (e.target.id.includes('update-menuItem')) {
       e.preventDefault();
       const [order, menuItem] = document.querySelector('#OrderItem_id').value.split('--');
-      // const [menu, price] = document.querySelector('#OrderItem_id').selectedOptions[0].text.split('--');
+
       const orderObject = {
         orderID: order,
         menuItemID: menuItem
       };
       createOrderitem(orderObject);
-      // createOrderitem(orderObject).then(orderItemForm(orderObject));
-      // getOrderDetails().then((orderCards) => showOrderDetails(orderCards));
     }
 
     if (e.target.id.includes('payment')) {
@@ -78,7 +73,9 @@ const domEvents = () => {
           orderTotal
         };
         updateOrder(orderObject);
+        getOrders().then((orderCards) => showOrders(orderCards));
       });
+      showHSbuttons(user);
     }
 
     // Delete Orders
@@ -92,6 +89,7 @@ const domEvents = () => {
     // VIEW ORDERS ITEMS
     if (e.target.id.includes('details-btn')) {
       const [, firebaseKey] = e.target.id.split('--');
+      console.warn('dom', firebaseKey);
       viewOrderItems(firebaseKey).then(showOrderItems);
     }
     // DELETE MENU ITEMS
@@ -137,6 +135,16 @@ const domEvents = () => {
       };
       updateMenuItem(menuItemObject);
       getOrders().then(showOrders);
+    }
+    // CLOSE ORDER
+    if (e.target.id.includes('close-order')) {
+      e.preventDefault();
+      const [, firebaseKey] = e.target.id.split('--');
+      const orderObject = {
+        firebaseKey,
+        orderStatus: false,
+      };
+      editOrder(orderObject).then(showOrders);
     }
   });
 };
