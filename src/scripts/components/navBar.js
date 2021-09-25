@@ -31,15 +31,9 @@ const navBar = () => {
           <li class="nav-item">
             <a class="nav-link" href="#" id="createOrder">Create an Order</a>
           </li>
-<<<<<<< HEAD
-            <li class="nav-item">
-            <a class="nav-link" href="#" id="revenue">View Revenue</a>
-          </li>
-=======
           <li class="nav-item">
           <a class="nav-link" href="#" id="revenue">View Revenue</a>
         </li>
->>>>>>> Development
           <div class="logout" id="logout-button">
           </div>
           <li>

@@ -10,7 +10,6 @@ const getSingleMenuItem = (firebaseKey) => new Promise((resolve, reject) => {
 });
 
 const getOrderTotal = (orderFirebaseKey) => new Promise((resolve, reject) => {
-  // let menuitemsflat = 0;
   getSingleOrdeMenuItems(orderFirebaseKey).then((mitems) => {
     const menuItemArray = mitems.map((menuItem) => getSingleMenuItem(menuItem.menuItemID));
     menuItemArray.forEach((item) => {
@@ -18,19 +17,6 @@ const getOrderTotal = (orderFirebaseKey) => new Promise((resolve, reject) => {
     });
   }).catch(reject);
 });
-
-// MenuItemsArray.forEach((item) => {
-//   const outputItem = Promise.all(getSingleMenuItem(item.menuItemID));
-//   console.warn('outputitem', outputItem);
-//   menuitemsflat += outputItem.itemPrice;
-// }).then(() => resolve(menuitemsflat))
-
-// const deleteAuthorBooks = (authorId) => new Promise((resolve, reject) => {
-//   getAuthorBooks(authorId).then((authorsBookArray) => {
-//     const deleteBooks = authorsBookArray.map((book) => deleteBook(book.firebaseKey));
-//     Promise.all([...deleteBooks]).then(() => resolve(deleteSingleAuthor(authorId)));
-//   }).catch(reject);
-// });
 
 const getMenuItemsForOrder = (firebaseKey) => new Promise((resolve, reject) => {
   axios.get(`${dbUrl}/menuItem.json?orderBy="firebaseKey"&equalTo="${firebaseKey}"`)
@@ -46,7 +32,6 @@ const getMenuItemsArray = (MenuItemsArray) => {
       menuitemsflat.push({ outputItem });
     });
   });
-  console.warn('menuitemsflat', menuitemsflat);
 };
 
 export {

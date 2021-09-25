@@ -191,3 +191,30 @@ body {
 .totalRevenueHeader{
   margin-bottom: 50px;
 }
+
+#cart-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-self: center;
+  .outside-card{
+    background-color: transparent;
+    margin-top: 1rem;
+    max-height: 21.5rem;
+    max-width: 36rem;
+    padding: .3rem;
+    border-color: yellow;
+    .middle-card{
+      background-color: transparent;
+      border-color: green;
+    .card {
+      display: flex;
+      justify-content: center;
+      max-width: 35rem;
+      padding-right: 1rem;
+      background-color: transparent;
+      border-color: red;
+    }
+    }
+  }
+}

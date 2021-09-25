@@ -16,10 +16,9 @@ import showOrderItems from '../components/showOrderItems';
 import addUpdateForm from '../components/forms/updateForm';
 import { getSingleMenuItem } from '../helpers/data/menuitems';
 import addUpdateMenuItemForm from '../components/forms/updateMenuItemForm';
-import showHSbuttons from '../components/homeScreenButtonsCard';
 import itemsInCart from '../components/forms/cartItems';
 
-const domEvents = (user) => {
+const domEvents = () => {
   document.querySelector('#main-container').addEventListener('click', (e) => {
     if (e.target.id.includes('viewOrders')) {
       getOrders().then((orderCards) => showOrders(orderCards));
@@ -55,7 +54,7 @@ const domEvents = (user) => {
         menuItemID: menuItem
       };
       createOrderitem(orderObject);
-      itemsInCart(orderObject);
+      itemsInCart(menuItem);
     }
 
     if (e.target.id.includes('payment')) {
@@ -77,7 +76,6 @@ const domEvents = (user) => {
         updateOrder(orderObject);
         getOrders().then((orderCards) => showOrders(orderCards));
       });
-      showHSbuttons(user);
     }
 
     // Delete Orders
@@ -116,7 +114,7 @@ const domEvents = (user) => {
       };
       editOrder(orderObject).then(showOrders);
     }
-    // EVENT FOR  EDIT MENU ITEM
+    // EVENT FOR EDIT MENU ITEM
     if (e.target.id.includes('edit-MenuItem')) {
       e.preventDefault();
       const [, firebasekey] = e.target.id.split('--');
@@ -132,7 +130,6 @@ const domEvents = (user) => {
         firebaseKey,
       };
       updateMenuItem(menuItemObject);
-      getOrders().then(showOrders);
     }
     // CLOSE ORDER
     if (e.target.id.includes('close-order')) {

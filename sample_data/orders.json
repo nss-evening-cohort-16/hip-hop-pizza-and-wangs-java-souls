@@ -9,7 +9,7 @@
     "orderType" : "Phone",
     "paymentMethod" : "CreditCard",
     "timeStamp" : "2021-09-24T03:20:30.464Z",
-    "tipTotal" : "10"
+    "tipTotal" : 10
   },
   "-MkKoaaC3dvUD3IiLQwX" : {
     "customerEmail" : "Tuesday@week.com",
@@ -21,7 +21,7 @@
     "orderType" : "Phone",
     "paymentMethod" : "GiftCard",
     "timeStamp" : "2021-09-24T03:21:21.091Z",
-    "tipTotal" : "20"
+    "tipTotal" : 20
   },
   "-MkKp4IpvF5hYSnHfwlW" : {
     "customerEmail" : "Friday@week.com",
@@ -33,7 +33,7 @@
     "orderType" : "On-line",
     "paymentMethod" : "cash",
     "timeStamp" : "2021-09-24T03:23:26.878Z",
-    "tipTotal" : "14"
+    "tipTotal" : 14
   },
   "-MkKqjOrkR5ln4KrYYYH" : {
     "customerEmail" : "test12@test.com",
@@ -69,7 +69,7 @@
     "orderType" : "In-person",
     "paymentMethod" : "CreditCard",
     "timeStamp" : "2021-09-24T03:43:23.409Z",
-    "tipTotal" : "23"
+    "tipTotal" : 23
   },
   "-MkOwtSGsRpXevIRl9KV" : {
     "customerEmail" : "grace@grace.com",
@@ -81,7 +81,7 @@
     "orderType" : "In-person",
     "paymentMethod" : "cash",
     "timeStamp" : "2021-09-24T22:36:07.816Z",
-    "tipTotal" : "12"
+    "tipTotal" : 12
   },
   "-MkPFAqtq5ikL4seyphM" : {
     "customerEmail" : "test@testmail.com",
