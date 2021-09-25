@@ -140,7 +140,7 @@ const domEvents = (user) => {
       const [, firebaseKey] = e.target.id.split('--');
       const orderObject = {
         firebaseKey,
-        orderStatus: false
+        orderStatus: false,
       };
       editOrder(orderObject).then(showOrders);
     }
