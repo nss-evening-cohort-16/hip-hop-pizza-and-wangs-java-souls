@@ -1,7 +1,8 @@
 import axios from 'axios';
 import firebaseConfig from '../../../api/apiKeys';
-import orderItemForm from '../../components/forms/orderItemForm';
+import orderItemForm from '../../components/forms/OrderItemForm';
 import { getSingleOrdeMenuItems } from './orderItemsData';
+// import { getSingleOrdeMenuItems } from './orderItemsData';
 
 const dbUrl = firebaseConfig.databaseURL;
 // get orders
@@ -29,8 +30,7 @@ const createOrder = (orderObject) => new Promise((resolve, reject) => {
 });
 const updateOrder = (orderObject) => {
   const body = { tipTotal: orderObject.tipTotal, paymentMethod: orderObject.paymentMethod, orderTotal: orderObject.orderTotal };
-  axios.patch(`${dbUrl}/orders/${orderObject.ordernumber}.json`, body).then(() => {
-  });
+  return axios.patch(`${dbUrl}/orders/${orderObject.ordernumber}.json`, body);
 };
 
 // EDIT ORDER
