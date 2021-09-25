@@ -6,7 +6,7 @@ const showOrderItems = (array) => {
   document.querySelector('#view').innerHTML += `
   <div id="menuItemView">
   </div>`;
-  console.warn(orderArray);
+  // console.warn(orderArray);
 
   array.orderArray.forEach((item) => {
     document.querySelector('#menuItemView').innerHTML += `

@@ -1,6 +1,6 @@
 import axios from 'axios';
 import firebaseConfig from '../../../api/apiKeys';
-import orderItemForm from '../../components/forms/orderItemForm';
+import orderItemForm from '../../components/forms/OrderItemForm';
 import { getSingleOrdeMenuItems } from './orderItemsData';
 // import { getSingleOrdeMenuItems } from './orderItemsData';
 
