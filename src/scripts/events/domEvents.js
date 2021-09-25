@@ -138,7 +138,7 @@ const domEvents = () => {
         itemPrice: document.querySelector('#itemPrice').value,
         firebaseKey,
       };
-      updateMenuItem(menuItemObject);
+      updateMenuItem(menuItemObject).then(showOrders);
     }
     // CLOSE ORDER
     if (e.target.id.includes('close-order')) {
