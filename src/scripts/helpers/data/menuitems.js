@@ -32,6 +32,12 @@ const getOrderTotal = (orderFirebaseKey) => new Promise((resolve, reject) => {
 //   }).catch(reject);
 // });
 
+const getMenuItemsForOrder = (firebaseKey) => new Promise((resolve, reject) => {
+  axios.get(`${dbUrl}/menuItem.json?orderBy="firebaseKey"&equalTo="${firebaseKey}"`)
+    .then((response) => resolve(Object.values(response.data)))
+    .catch((reject));
+});
+
 const getMenuItemsArray = (MenuItemsArray) => {
   const menuitemsflat = [];
   MenuItemsArray.forEach((item) => {
@@ -44,7 +50,16 @@ const getMenuItemsArray = (MenuItemsArray) => {
 };
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 export { getOrderTotal, getMenuItemsArray, getMenuItemsForOrder };
 =======
 export { getOrderTotal, getMenuItemsArray, getSingleMenuItem };
 >>>>>>> rk-total
+=======
+export {
+  getOrderTotal,
+  getMenuItemsArray,
+  getSingleMenuItem,
+  getMenuItemsForOrder
+};
+>>>>>>> c1cdf195658caa3c588f38cf7992392c9b6b397a

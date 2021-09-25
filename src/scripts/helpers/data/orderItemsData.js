@@ -31,6 +31,17 @@ const createOrderitem = (orderObject) => new Promise((resolve, reject) => {
     }).catch((error) => reject(error));
 });
 
+// const createOrderitem = (orderObject) => new Promise((resolve, reject) => {
+//   axios.post(`${dbUrl}/orderMenuItems.json`, orderObject)
+//     .then((response) => {
+//       const body = { firebaseKey: response.data.name };
+//       axios.patch(`${dbUrl}/orderMenuItems/${response.data.name}.json`, body)
+//         .then(() => resolve(Object.values(response.data)))
+
+//         .catch((error) => reject(error));
+//     });
+// });
+
 // delete menu items
 const deleteMenuItem = (firebaseKey) => new Promise((resolve, reject) => {
   axios.delete(`${dbUrl}/menuItem/${firebaseKey}.json`)
@@ -40,15 +51,23 @@ const deleteMenuItem = (firebaseKey) => new Promise((resolve, reject) => {
     .catch(reject);
 });
 
-// Delete order items when order is deleted
-// const deleteOrderMenuItems = (orderId) => new Promise((resolve, reject) => {
-//
-// });
-
 const getSingleOrdeMenuItems = (firebaseKey) => new Promise((resolve, reject) => {
   axios.get(`${dbUrl}/orderMenuItems.json?orderBy="orderID"&equalTo="${firebaseKey}"`)
     .then((response) => resolve(Object.values(response.data)))
     .catch((error) => reject(error));
+});
+// UPDATE MENU ITEM
+const updateMenuItem = (menuItemObject) => new Promise((resolve, reject) => {
+  axios.patch(`${dbUrl}/menuItem/${menuItemObject.firebaseKey}.json`, menuItemObject)
+    .then(() => getMenuItems(menuItemObject).then(resolve))
+    .catch(reject);
+});
+const deleteOrderMenuItem = (firebaseKey) => new Promise((resolve, reject) => {
+  axios.delete(`${dbUrl}/orderMenuItem/${firebaseKey}.json`)
+    .then(() => {
+      getOrderDetails().then(resolve);
+    })
+    .catch(reject);
 });
 
 export {
@@ -56,5 +75,7 @@ export {
   createOrderitem,
   getOrderDetails,
   getSingleOrdeMenuItems,
-  deleteMenuItem
+  deleteMenuItem,
+  updateMenuItem,
+  deleteOrderMenuItem
 };
