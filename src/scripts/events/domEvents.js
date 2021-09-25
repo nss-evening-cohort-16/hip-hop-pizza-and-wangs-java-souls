@@ -66,6 +66,7 @@ const domEvents = () => {
     if (e.target.id.includes('finish')) {
       e.preventDefault();
       const [ordernumber, paymentMethod] = document.querySelector('#transmethod').value.split('--');
+      console.warn('finish', ordernumber, paymentMethod);
       viewOrderTotal(ordernumber).then((orderTotal) => {
         const orderObject = {
           ordernumber,
