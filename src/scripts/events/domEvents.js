@@ -3,19 +3,22 @@ import {
   getOrders,
   createOrder,
   deleteOrder,
-  updateOrder
+  updateOrder,
+  getSingleOrder,
+  editOrder,
 } from '../helpers/data/ordersData';
-// import { viewOrderMenuItems } from '../helpers/data/mergeData';
 import { viewOrderTotal, viewOrderItems } from '../helpers/data/mergedata';
-import { createOrderitem } from '../helpers/data/orderItemsData';
+import { createOrderitem, updateMenuItem, deleteMenuItem } from '../helpers/data/orderItemsData';
 import paymentForm from '../components/forms/paymentForm';
-// import { createOrderitem, getOrderDetails } from '../helpers/data/orderItemsData';
-// import showOrderDetails from '../components/showOrderDetails';
 import addOrderForm from '../components/forms/orderForm';
 import viewRevenuePage from '../components/revenue';
 import showOrderItems from '../components/showOrderItems';
+import addUpdateForm from '../components/forms/updateForm';
+import { getSingleMenuItem } from '../helpers/data/menuitems';
+import addUpdateMenuItemForm from '../components/forms/updateMenuItemForm';
+import showHSbuttons from '../components/homeScreenButtonsCard';
 
-const domEvents = () => {
+const domEvents = (user) => {
   document.querySelector('#main-container').addEventListener('click', (e) => {
     if (e.target.id.includes('viewOrders')) {
       getOrders().then((orderCards) => showOrders(orderCards));
@@ -32,29 +35,25 @@ const domEvents = () => {
         customerEmail: document.querySelector('#custemail').value,
         customerName: document.querySelector('#orderName').value,
         customerPhoneNumber: document.querySelector('#phone').value,
-        orderStatus: '',
+        orderStatus: true,
         orderTotal: 0,
         orderType: document.querySelector('#orderType').value,
         paymentMethod: '',
         timeStamp: new Date(),
         tipTotal: 0
       };
-
       createOrder(orderObject);
     }
 
     if (e.target.id.includes('update-menuItem')) {
       e.preventDefault();
       const [order, menuItem] = document.querySelector('#OrderItem_id').value.split('--');
-      // const [menu, price] = document.querySelector('#OrderItem_id').selectedOptions[0].text.split('--');
+
       const orderObject = {
         orderID: order,
         menuItemID: menuItem
       };
       createOrderitem(orderObject);
-      // viewOrderItems(order).then(showOrderItems);
-      // createOrderitem(orderObject).then(orderItemForm(orderObject));
-      // getOrderDetails().then((orderCards) => showOrderDetails(orderCards));
     }
 
     if (e.target.id.includes('payment')) {
@@ -77,6 +76,7 @@ const domEvents = () => {
         updateOrder(orderObject);
         getOrders().then((orderCards) => showOrders(orderCards));
       });
+      showHSbuttons(user);
     }
 
     // Delete Orders
@@ -96,9 +96,57 @@ const domEvents = () => {
     }
     // DELETE MENU ITEMS
     if (e.target.id.includes('delete-menuItem')) {
+      // eslint-disable-next-line no-alert
+      if (window.confirm('Are you sure you want to delete this item?')) {
+        const [, firebaseKey] = e.target.id.split('--');
+        deleteMenuItem(firebaseKey);
+      }
+    }
+    // EDIT ORDER
+    if (e.target.id.includes('edit-btn')) {
+      const [, id] = e.target.id.split('--');
+      getSingleOrder(id).then((orderObj) => addUpdateForm(orderObj));
+    }
+    // SUBMIT EDIT ORDER
+    if (e.target.id.includes('submitEdit-order')) {
+      e.preventDefault();
       const [, firebaseKey] = e.target.id.split('--');
-      console.warn('e.target.id', e.target.id);
-      viewOrderItems(firebaseKey).then(showOrderItems);
+      const orderObject = {
+        customerEmail: document.querySelector('#custemail').value,
+        customerName: document.querySelector('#orderName').value,
+        customerPhoneNumber: document.querySelector('#phone').value,
+        orderType: document.querySelector('#orderType').value,
+        firebaseKey
+      };
+      editOrder(orderObject).then(showOrders);
+    }
+    // EVENT FOR  EDIT MENU ITEM
+    if (e.target.id.includes('edit-MenuItem')) {
+      e.preventDefault();
+      const [, firebasekey] = e.target.id.split('--');
+      getSingleMenuItem(firebasekey).then((itemObject) => addUpdateMenuItemForm(itemObject));
+    }
+    // SUBMIT EDIT MENU ITEM
+    if (e.target.id.includes('update-MenuItemSubmit')) {
+      e.preventDefault();
+      const [, firebaseKey] = e.target.id.split('--');
+      const menuItemObject = {
+        menuItem: document.querySelector('#itemName').value,
+        itemPrice: document.querySelector('#itemPrice').value,
+        firebaseKey,
+      };
+      updateMenuItem(menuItemObject);
+      getOrders().then(showOrders);
+    }
+    // CLOSE ORDER
+    if (e.target.id.includes('close-order')) {
+      e.preventDefault();
+      const [, firebaseKey] = e.target.id.split('--');
+      const orderObject = {
+        firebaseKey,
+        orderStatus: false,
+      };
+      editOrder(orderObject).then(showOrders);
     }
   });
 };

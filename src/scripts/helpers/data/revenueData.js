@@ -3,7 +3,7 @@ import { getOrders } from './ordersData';
 const getTotalTips = () => {
   getOrders()
     .then((ordersArray) => {
-      const reducer = (accum, currentValue) => accum + currentValue.tipTotal;
+      const reducer = (accum, currentValue) => accum + parseFloat(currentValue.tipTotal);
       const tipTotal = (ordersArray.reduce(reducer, 0));
       const totalTips = Math.round(tipTotal);
       document.querySelector('#totalTips').innerHTML += `$${totalTips}`;
@@ -12,11 +12,14 @@ const getTotalTips = () => {
 const getTotalRevenue = () => {
   getOrders()
     .then((ordersArray) => {
-      const reducer = (accum, currentValue) => accum + currentValue.orderTotal;
+      const reducer = (accum, currentValue) => accum + parseFloat(currentValue.orderTotal);
       const ordersTotal = (ordersArray.reduce(reducer, 0));
-      const reduceTips = (accum, currentValue) => accum + currentValue.tipTotal;
+      console.warn(ordersTotal);
+      const reduceTips = (accum, currentValue) => accum + parseFloat(currentValue.tipTotal);
       const tipTotal = (ordersArray.reduce(reduceTips, 0));
+      console.warn(tipTotal);
       const totalTips = Math.round(tipTotal);
+      console.warn(totalTips);
       const totalRev = Math.round(ordersTotal + totalTips);
       document.querySelector('#totalRevenue').innerHTML += `$${totalRev}`;
     });
