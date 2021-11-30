@@ -9,11 +9,10 @@ const showOrderItems = (array) => {
 
   const buttons = () => {
     array.orderMenuItemArray.forEach((elm) => {
-      console.warn(elm.orderID, 'show id');
       document.querySelector('#menuItemView').innerHTML += `
           <div id="orderId"class=" card del-btn-card card-body btn-div">
-                      <button type="button" id="delete-menuItem--${elm.firebaseKey}---${elm.orderID}" class="btn btn-outline-danger">Delete Item</button>              
-                    </div>
+              <button type="button" id="delete-menuItem--${elm.firebaseKey}---${elm.orderID}" class="btn btn-outline-danger">Delete Item</button>
+            </div>
           `;
     });
   };
@@ -31,7 +30,8 @@ const showOrderItems = (array) => {
             </ul>
             <div id="orderId"class="card-body btn-div">
             <button type="button" id="edit-MenuItem--${item.firebaseKey}" class="btn btn-outline-warning">Edit Item</button>
-          </div>${buttons()}
+          </div>
+          ${buttons()}
             </div> 
           </div>
         </div>
